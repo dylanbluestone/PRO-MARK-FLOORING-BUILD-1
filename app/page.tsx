@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { Phone, CheckCircle, Award, Users, Clock, Shield, ArrowRight, Star } from 'lucide-react'
+import Image from 'next/image'
+import { Phone, CheckCircle, Award, Users, Clock, Shield, ArrowRight, Star, MapPin, Layers, Grid3X3, Ruler, Sparkles, BadgeCheck, ThumbsUp, Hammer, TrendingUp, Wrench, Home, Building2 } from 'lucide-react'
 import { LocalBusinessSchema } from '@/lib/schema-markup'
 
 export default function HomePage() {
@@ -12,72 +13,206 @@ export default function HomePage() {
       />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-gray-900 to-gray-800 text-white section-padding">
-        {/* TODO: Add hero background image from /assets after image analysis */}
-        <div className="absolute inset-0 bg-black opacity-40"></div>
-        <div className="container-custom relative z-10">
-          <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
-              Vancouver's Leader in Floor Leveling & Hardwood Installation
+      <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/assets/hardwood-flooring-vancouver-Promark-Flooring.jpg"
+            alt="Professional hardwood floor installation by PROMARK FLOORING in Vancouver"
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* Dark overlay so text is readable */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
+        </div>
+
+        {/* Content */}
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-2xl">
+            {/* Trust badge */}
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
+              <Star className="text-yellow-400 fill-yellow-400" size={18} />
+              <span className="text-white text-sm font-medium">20+ Years Experience • 5-Year Warranty</span>
+            </div>
+
+            {/* Main headline */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+              Vancouver's Leader in <span className="text-red-500">Floor Leveling</span> & Hardwood Installation
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-200">
-              Transform your property with professional floor leveling and hardwood installation. 20+ years of experience, industry-leading warranties, and exceptional craftsmanship.
+
+            {/* Subheadline */}
+            <p className="text-xl text-gray-200 mb-8 leading-relaxed">
+              Transform your property with professional floor leveling and hardwood installation.
+              Serving Greater Vancouver and the Fraser Valley with exceptional craftsmanship.
             </p>
+
+            {/* CTA Buttons - visible with shadow */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/quote" className="btn-primary text-center">
+              <Link
+                href="/quote"
+                className="inline-flex items-center justify-center gap-2 bg-red-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-red-700 transition-all shadow-2xl shadow-red-600/40 hover:shadow-red-600/60 hover:-translate-y-1"
+              >
                 Get Free Quote
+                <ArrowRight size={20} />
               </Link>
-              <a href="tel:+16043536077" className="btn-secondary text-center">
-                <Phone className="inline mr-2" size={20} />
-                Call (604) 353-6077
+              <a
+                href="tel:+16043536077"
+                className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all"
+              >
+                <Phone size={20} />
+                (604) 353-6077
               </a>
+            </div>
+
+            {/* Trust indicators */}
+            <div className="flex flex-wrap items-center gap-6 mt-10 pt-8 border-t border-white/20">
+              <div className="flex items-center gap-2">
+                <Shield className="text-green-400" size={24} />
+                <span className="text-white font-medium">5-Year Warranty</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Award className="text-yellow-400" size={24} />
+                <span className="text-white font-medium">Certified Pros</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <MapPin className="text-red-400" size={24} />
+                <span className="text-white font-medium">Local & Family-Owned</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Trust Badges */}
-      <section className="bg-white py-8 border-b">
+      <section className="bg-gray-50 py-10 border-y border-gray-200">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div className="flex flex-col items-center">
-              <Award className="text-primary-red mb-2" size={40} />
-              <p className="font-semibold">20+ Years</p>
+              <div className="w-16 h-16 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                <Award className="text-red-600" size={32} />
+              </div>
+              <p className="font-semibold text-gray-900">20+ Years</p>
               <p className="text-sm text-gray-600">Experience</p>
             </div>
             <div className="flex flex-col items-center">
-              <Shield className="text-primary-red mb-2" size={40} />
-              <p className="font-semibold">5-Year Warranty</p>
+              <div className="w-16 h-16 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                <Shield className="text-red-600" size={32} />
+              </div>
+              <p className="font-semibold text-gray-900">5-Year Warranty</p>
               <p className="text-sm text-gray-600">Floor Leveling</p>
             </div>
             <div className="flex flex-col items-center">
-              <Users className="text-primary-red mb-2" size={40} />
-              <p className="font-semibold">Family-Owned</p>
+              <div className="w-16 h-16 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                <Home className="text-red-600" size={32} />
+              </div>
+              <p className="font-semibold text-gray-900">Family-Owned</p>
               <p className="text-sm text-gray-600">Local & Trusted</p>
             </div>
             <div className="flex flex-col items-center">
-              <Star className="text-primary-red mb-2" size={40} />
-              <p className="font-semibold">5-Star Rated</p>
+              <div className="w-16 h-16 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                <Star className="text-red-600" size={32} />
+              </div>
+              <p className="font-semibold text-gray-900">5-Star Rated</p>
               <p className="text-sm text-gray-600">Google Reviews</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Introduction */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="mb-6">Welcome to PROMARK FLOORING</h2>
-            <p className="text-lg text-gray-700 mb-4">
-              For over 20 years, PROMARK FLOORING has been the trusted choice for professional floor leveling and hardwood installation across Greater Vancouver and the Fraser Valley. Founded and operated by Mark Biernacki (Marek), our company combines decades of hands-on experience with a commitment to exceptional craftsmanship and customer satisfaction.
-            </p>
-            <p className="text-lg text-gray-700 mb-4">
-              We specialize in transforming uneven, damaged, or outdated floors into beautiful, functional surfaces that enhance your property's value and appeal. Whether you're a homeowner looking to upgrade your living space, a business owner needing commercial flooring solutions, or a contractor seeking a reliable flooring partner, we deliver results that exceed expectations.
-            </p>
-            <p className="text-lg text-gray-700">
-              Serving Vancouver, North Vancouver, West Vancouver, Burnaby, Surrey, Delta, Langley, Port Coquitlam, Maple Ridge, Mission, and surrounding areas, we bring local expertise and personalized service to every project.
-            </p>
+      {/* About Section: Text Left, Image Right */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Text */}
+            <div>
+              <span className="text-red-600 font-semibold text-sm uppercase tracking-wider">About Us</span>
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-2 mb-6">
+                20+ Years of Flooring Excellence in Vancouver
+              </h2>
+              <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                Founded and operated by Mark Biernacki (Marek), PROMARK FLOORING has been the trusted choice for professional floor leveling and hardwood installation across Greater Vancouver and the Fraser Valley for over two decades.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-3">
+                  <CheckCircle className="text-green-500 flex-shrink-0" size={20} />
+                  <span className="text-gray-700">5-year warranty on floor leveling</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <CheckCircle className="text-green-500 flex-shrink-0" size={20} />
+                  <span className="text-gray-700">Certified & experienced professionals</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <CheckCircle className="text-green-500 flex-shrink-0" size={20} />
+                  <span className="text-gray-700">Family-owned & locally operated</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <CheckCircle className="text-green-500 flex-shrink-0" size={20} />
+                  <span className="text-gray-700">Serving residential & commercial clients</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Image */}
+            <div className="relative">
+              <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                <Image
+                  src="/assets/PROMARK-FLOORING-floor-leveling-Vancouver-13.jpg"
+                  alt="Professional floor leveling work by PROMARK FLOORING in Vancouver"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              {/* Decorative corners */}
+              <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-red-600 rounded-2xl -z-10" />
+              <div className="absolute -top-6 -right-6 w-32 h-32 bg-red-100 rounded-2xl -z-10" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Expertise Section: Image Left, Text Right */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Image - LEFT */}
+            <div className="relative order-2 lg:order-1">
+              <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                <Image
+                  src="/assets/PROMARK-FLOORING-hardwood-flooring-installation-Vancouver-7.jpg"
+                  alt="Expert hardwood flooring installation in Vancouver by PROMARK FLOORING"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-red-600 rounded-2xl -z-10" />
+              <div className="absolute -top-6 -left-6 w-32 h-32 bg-red-100 rounded-2xl -z-10" />
+            </div>
+
+            {/* Text - RIGHT */}
+            <div className="order-1 lg:order-2">
+              <span className="text-red-600 font-semibold text-sm uppercase tracking-wider">Our Expertise</span>
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-2 mb-6">
+                Transforming Floors Across Greater Vancouver
+              </h2>
+              <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                We specialize in transforming uneven, damaged, or outdated floors into beautiful, functional surfaces that enhance your property's value and appeal.
+              </p>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                Whether you're a homeowner looking to upgrade your living space, a business owner needing commercial flooring solutions, or a contractor seeking a reliable flooring partner, we deliver results that exceed expectations.
+              </p>
+              <div className="mt-8">
+                <Link
+                  href="/quote"
+                  className="inline-flex items-center gap-2 bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-all shadow-lg"
+                >
+                  Get Free Quote
+                  <ArrowRight size={18} />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -152,6 +287,66 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Process Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <span className="text-red-400 font-semibold text-sm uppercase tracking-wider">How We Work</span>
+            <h2 className="text-3xl lg:text-4xl font-bold mt-2">Our Floor Leveling Process</h2>
+            <p className="text-gray-400 mt-4 max-w-2xl mx-auto">From assessment to completion, we ensure every step is handled with precision.</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Step 1 */}
+            <div className="relative">
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all group">
+                <div className="w-14 h-14 bg-red-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <span className="text-2xl font-bold">1</span>
+                </div>
+                <h3 className="text-xl font-bold mb-3">Free Assessment</h3>
+                <p className="text-gray-400 leading-relaxed">We inspect your space and identify the best solution for your floors.</p>
+              </div>
+              <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-red-600/50" />
+            </div>
+
+            {/* Step 2 */}
+            <div className="relative">
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all group">
+                <div className="w-14 h-14 bg-red-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <span className="text-2xl font-bold">2</span>
+                </div>
+                <h3 className="text-xl font-bold mb-3">Preparation</h3>
+                <p className="text-gray-400 leading-relaxed">We clean, repair cracks, and prepare the subfloor for leveling.</p>
+              </div>
+              <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-red-600/50" />
+            </div>
+
+            {/* Step 3 */}
+            <div className="relative">
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all group">
+                <div className="w-14 h-14 bg-red-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <span className="text-2xl font-bold">3</span>
+                </div>
+                <h3 className="text-xl font-bold mb-3">Precision Leveling</h3>
+                <p className="text-gray-400 leading-relaxed">Using self-leveling compounds, we create a perfectly smooth surface.</p>
+              </div>
+              <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-red-600/50" />
+            </div>
+
+            {/* Step 4 */}
+            <div>
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all group">
+                <div className="w-14 h-14 bg-red-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <span className="text-2xl font-bold">4</span>
+                </div>
+                <h3 className="text-xl font-bold mb-3">Quality Check</h3>
+                <p className="text-gray-400 leading-relaxed">Final walkthrough ensures everything meets our high standards.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Us */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
@@ -161,51 +356,63 @@ export default function HomePage() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <CheckCircle className="text-primary-red mb-4" size={40} />
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                <Award className="text-red-600" size={28} />
+              </div>
               <h3 className="text-xl font-semibold mb-3">20+ Years of Experience</h3>
               <p className="text-gray-700">
-                Over two decades of hands-on experience means we've encountered and solved every flooring challenge imaginable. We bring proven expertise to every project, ensuring reliable, high-quality results.
+                Over two decades of hands-on experience means we've encountered and solved every flooring challenge imaginable.
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <Shield className="text-primary-red mb-4" size={40} />
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                <Shield className="text-red-600" size={28} />
+              </div>
               <h3 className="text-xl font-semibold mb-3">Industry-Leading Warranties</h3>
               <p className="text-gray-700">
-                Our 5-year warranty on floor leveling and 1-year warranty on hardwood installation demonstrate our confidence in our workmanship. We stand behind our work with guarantees that provide real peace of mind.
+                Our 5-year warranty on floor leveling demonstrates our confidence in delivering lasting, high-quality results.
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <Users className="text-primary-red mb-4" size={40} />
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                <Home className="text-red-600" size={28} />
+              </div>
               <h3 className="text-xl font-semibold mb-3">Family-Owned & Local</h3>
               <p className="text-gray-700">
-                As a family-owned business rooted in the Vancouver community, we treat every project like it's our own home. You'll work directly with Mark, ensuring personalized service and attention to detail.
+                As a family-owned business rooted in Vancouver, we treat every project like it's our own home.
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <Award className="text-primary-red mb-4" size={40} />
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                <BadgeCheck className="text-red-600" size={28} />
+              </div>
               <h3 className="text-xl font-semibold mb-3">Certified Professionals</h3>
               <p className="text-gray-700">
-                Our team consists of certified, experienced flooring professionals who stay current with the latest techniques, materials, and industry best practices. Quality craftsmanship is our standard.
+                Our team consists of certified, experienced flooring professionals who stay current with the latest techniques and materials.
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <Clock className="text-primary-red mb-4" size={40} />
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                <Building2 className="text-red-600" size={28} />
+              </div>
               <h3 className="text-xl font-semibold mb-3">Residential & Commercial</h3>
               <p className="text-gray-700">
-                From single-family homes to large commercial properties, we have the expertise and capacity to handle projects of any size. Our versatility makes us your one-stop flooring solution.
+                From single-family homes to large commercial properties, we have the expertise to handle projects of any size.
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <CheckCircle className="text-primary-red mb-4" size={40} />
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                <ThumbsUp className="text-red-600" size={28} />
+              </div>
               <h3 className="text-xl font-semibold mb-3">Free Consultation & Quote</h3>
               <p className="text-gray-700">
-                We offer complimentary on-site consultations and detailed quotes with no obligation. Get expert advice and transparent pricing before making any commitment.
+                We offer complimentary on-site consultations and detailed quotes with no obligation. Transparent pricing guaranteed.
               </p>
             </div>
           </div>
@@ -247,25 +454,84 @@ export default function HomePage() {
       </section>
 
       {/* Gallery Preview */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2>Recent Projects</h2>
             <p className="text-lg text-gray-600 mt-4">See the PROMARK FLOORING difference</p>
           </div>
 
-          {/* TODO: Replace with actual images from /assets after image analysis */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
-              <div key={item} className="aspect-square bg-gray-200 rounded-lg flex items-center justify-center">
-                <p className="text-gray-500 text-sm">Project Image {item}</p>
-              </div>
-            ))}
+            <div className="aspect-square relative rounded-xl overflow-hidden group shadow-lg hover:shadow-2xl transition-shadow">
+              <Image
+                src="/assets/hardwood-flooring-vancouver-Promark-Flooring-2.jpg"
+                alt="Beautiful hardwood flooring installation"
+                fill
+                className="object-cover group-hover:scale-110 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-square relative rounded-xl overflow-hidden group shadow-lg hover:shadow-2xl transition-shadow">
+              <Image
+                src="/assets/PROMARK-FLOORING-floor-leveling-Vancouver-17.jpg"
+                alt="Professional floor leveling"
+                fill
+                className="object-cover group-hover:scale-110 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-square relative rounded-xl overflow-hidden group shadow-lg hover:shadow-2xl transition-shadow">
+              <Image
+                src="/assets/PROMARK-FLOORING-stairs-11.jpg"
+                alt="Expert staircase installation"
+                fill
+                className="object-cover group-hover:scale-110 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-square relative rounded-xl overflow-hidden group shadow-lg hover:shadow-2xl transition-shadow">
+              <Image
+                src="/assets/PROMARK-FLOORING-hardwood-flooring-13.jpg"
+                alt="Quality hardwood floors"
+                fill
+                className="object-cover group-hover:scale-110 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-square relative rounded-xl overflow-hidden group shadow-lg hover:shadow-2xl transition-shadow">
+              <Image
+                src="/assets/PROMARK-FLOORING-floor-leveling-Vancouver-14.jpg"
+                alt="Floor leveling expertise"
+                fill
+                className="object-cover group-hover:scale-110 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-square relative rounded-xl overflow-hidden group shadow-lg hover:shadow-2xl transition-shadow">
+              <Image
+                src="/assets/PROMARK-FLOORING-stairs-14.jpg"
+                alt="Beautiful staircase work"
+                fill
+                className="object-cover group-hover:scale-110 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-square relative rounded-xl overflow-hidden group shadow-lg hover:shadow-2xl transition-shadow">
+              <Image
+                src="/assets/PROMARK-FLOORING-hardwood-flooring-installation-Vancouver-10.jpg"
+                alt="Hardwood installation project"
+                fill
+                className="object-cover group-hover:scale-110 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-square relative rounded-xl overflow-hidden group shadow-lg hover:shadow-2xl transition-shadow">
+              <Image
+                src="/assets/PROMARK-FLOORING-vinyl-flooring-vancouver-11.jpg"
+                alt="Vinyl flooring installation"
+                fill
+                className="object-cover group-hover:scale-110 transition-transform duration-300"
+              />
+            </div>
           </div>
 
           <div className="text-center">
-            <Link href="/gallery" className="btn-primary">
+            <Link href="/gallery" className="inline-flex items-center gap-2 bg-red-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-red-700 transition-all shadow-lg">
               View Full Gallery
+              <ArrowRight size={20} />
             </Link>
           </div>
         </div>
@@ -297,50 +563,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FAQ Preview */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2>Frequently Asked Questions</h2>
-          </div>
-
-          <div className="max-w-3xl mx-auto space-y-6">
-            <details className="bg-white p-6 rounded-lg shadow-sm">
-              <summary className="font-semibold text-lg cursor-pointer">How long does floor leveling take?</summary>
-              <p className="mt-4 text-gray-700">
-                Most residential floor leveling projects take 1-3 days depending on the size and condition of the area. The self-leveling compound typically cures within 24-48 hours before flooring installation can begin.
-              </p>
-            </details>
-
-            <details className="bg-white p-6 rounded-lg shadow-sm">
-              <summary className="font-semibold text-lg cursor-pointer">Do you offer free estimates?</summary>
-              <p className="mt-4 text-gray-700">
-                Yes! We provide free, no-obligation on-site consultations and detailed written quotes. We'll assess your project, answer your questions, and provide transparent pricing.
-              </p>
-            </details>
-
-            <details className="bg-white p-6 rounded-lg shadow-sm">
-              <summary className="font-semibold text-lg cursor-pointer">What's included in your 5-year floor leveling warranty?</summary>
-              <p className="mt-4 text-gray-700">
-                Our 5-year warranty covers workmanship and materials for floor leveling services. If you experience any issues with the leveling work within 5 years, we'll make it right at no additional cost.
-              </p>
-            </details>
-
-            <details className="bg-white p-6 rounded-lg shadow-sm">
-              <summary className="font-semibold text-lg cursor-pointer">Can you work on both residential and commercial properties?</summary>
-              <p className="mt-4 text-gray-700">
-                Absolutely. We serve both residential clients (homes, condos, townhomes) and commercial clients (offices, retail spaces, warehouses). Our experience spans all property types and sizes.
-              </p>
-            </details>
-          </div>
-
-          <div className="text-center mt-8">
-            <Link href="/faq" className="text-primary-red font-semibold inline-flex items-center hover:text-primary-red-dark">
-              View All FAQs <ArrowRight className="ml-2" size={18} />
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* Final CTA */}
       <section className="section-padding bg-primary-red text-white">
