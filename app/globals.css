@@ -1,0 +1,876 @@
+/* ============================================
+   PROMARK FLOORING - Premium Design System
+   Version 2.0 - Luxury Earthy Aesthetic
+   ============================================ */
+
+/* Google Fonts - Premium Typography */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+@import "tailwindcss";
+
+/* ============================================
+   THEME CONFIGURATION - Tailwind v4
+   ============================================ */
+@theme {
+  /* Primary - Rich Walnut Brown */
+  --color-walnut-50: #FAF7F5;
+  --color-walnut-100: #F2EBE6;
+  --color-walnut-200: #E3D5CB;
+  --color-walnut-300: #CDBAA8;
+  --color-walnut-400: #B09279;
+  --color-walnut-500: #8B6914;
+  --color-walnut-600: #5D4E37;
+  --color-walnut-700: #4A3E2C;
+  --color-walnut-800: #3D3324;
+  --color-walnut-900: #2E2619;
+  --color-walnut-950: #1A1610;
+
+  /* Secondary - Deep Forest Green */
+  --color-forest-50: #F4F7F4;
+  --color-forest-100: #E6EDE6;
+  --color-forest-200: #CDDACD;
+  --color-forest-300: #A8C0A8;
+  --color-forest-400: #7A9E7A;
+  --color-forest-500: #4A7C59;
+  --color-forest-600: #3A6347;
+  --color-forest-700: #2F4F3A;
+  --color-forest-800: #273F2F;
+  --color-forest-900: #1E3425;
+  --color-forest-950: #0F1A12;
+
+  /* Accent - Warm Copper/Gold */
+  --color-copper-50: #FDF8F3;
+  --color-copper-100: #FAF0E4;
+  --color-copper-200: #F5DFC6;
+  --color-copper-300: #EEC89D;
+  --color-copper-400: #E4A96A;
+  --color-copper-500: #D4874A;
+  --color-copper-600: #C6703D;
+  --color-copper-700: #A55834;
+  --color-copper-800: #854830;
+  --color-copper-900: #6C3C2A;
+  --color-copper-950: #3A1E14;
+
+  /* Cream/Neutral Warm Tones */
+  --color-cream-50: #FEFDFB;
+  --color-cream-100: #FBF9F4;
+  --color-cream-200: #F7F3EA;
+  --color-cream-300: #EFE8D9;
+  --color-cream-400: #E3D7C0;
+  --color-cream-500: #D4C4A5;
+  --color-cream-600: #B8A683;
+  --color-cream-700: #968564;
+  --color-cream-800: #7A6D52;
+  --color-cream-900: #645945;
+  --color-cream-950: #352F24;
+
+  /* Charcoal (Warm Black) */
+  --color-charcoal-50: #F7F6F5;
+  --color-charcoal-100: #ECEAE8;
+  --color-charcoal-200: #D5D2CE;
+  --color-charcoal-300: #B8B3AD;
+  --color-charcoal-400: #938C84;
+  --color-charcoal-500: #756E66;
+  --color-charcoal-600: #5F5851;
+  --color-charcoal-700: #4A4540;
+  --color-charcoal-800: #3A3632;
+  --color-charcoal-900: #2A2724;
+  --color-charcoal-950: #1A1816;
+
+  /* Fonts */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ============================================
+   CSS CUSTOM PROPERTIES
+   ============================================ */
+:root {
+  /* Primary Palette */
+  --primary: #5D4E37;
+  --primary-light: #8B6914;
+  --primary-dark: #3D3324;
+
+  /* Secondary Palette */
+  --secondary: #4A7C59;
+  --secondary-light: #7A9E7A;
+  --secondary-dark: #2F4F3A;
+
+  /* Accent */
+  --accent: #D4874A;
+  --accent-light: #E4A96A;
+  --accent-dark: #A55834;
+
+  /* Neutrals */
+  --cream: #FBF9F4;
+  --cream-dark: #EFE8D9;
+  --charcoal: #2A2724;
+  --charcoal-light: #4A4540;
+
+  /* Typography */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Source Sans Pro', sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+  --spacing-3xl: 6rem;
+
+  /* Border Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(42 39 36 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(42 39 36 / 0.1), 0 2px 4px -2px rgb(42 39 36 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(42 39 36 / 0.1), 0 4px 6px -4px rgb(42 39 36 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(42 39 36 / 0.1), 0 8px 10px -6px rgb(42 39 36 / 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgb(42 39 36 / 0.25);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 300ms ease;
+  --transition-slower: 500ms ease;
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+@layer base {
+  * {
+    @apply border-cream-300;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-cream-50 text-charcoal-800;
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+  }
+
+  /* Typography - Display Font for Headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    @apply text-charcoal-900;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold mb-6;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl font-semibold mb-4;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl font-semibold mb-3;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl font-medium mb-2;
+  }
+
+  h5 {
+    @apply text-lg md:text-xl font-medium mb-2;
+  }
+
+  h6 {
+    @apply text-base md:text-lg font-medium mb-2;
+  }
+
+  p {
+    @apply mb-4 text-charcoal-600;
+    line-height: 1.8;
+  }
+
+  a {
+    @apply transition-all duration-200;
+  }
+
+  /* Selection Color */
+  ::selection {
+    @apply bg-forest-500 text-white;
+  }
+}
+
+/* ============================================
+   LAYOUT UTILITIES
+   ============================================ */
+@layer utilities {
+  /* Container */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-narrow {
+    @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-wide {
+    @apply max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Section Spacing */
+  .section {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+
+  .section-sm {
+    @apply py-12 md:py-16;
+  }
+
+  .section-lg {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  /* Section Backgrounds */
+  .section-cream {
+    @apply bg-cream-100;
+  }
+
+  .section-dark {
+    @apply bg-charcoal-900 text-cream-50;
+  }
+
+  .section-forest {
+    @apply bg-forest-900 text-cream-50;
+  }
+
+  .section-walnut {
+    @apply bg-walnut-800 text-cream-50;
+  }
+}
+
+/* ============================================
+   BUTTON COMPONENTS
+   ============================================ */
+@layer components {
+  /* Primary Button - Forest Green */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2;
+    @apply px-6 py-3 font-semibold text-sm uppercase tracking-wider;
+    @apply rounded-lg transition-all duration-200;
+    @apply cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply bg-forest-600 text-white;
+    @apply hover:bg-forest-700 hover:-translate-y-0.5;
+    @apply hover:shadow-lg hover:shadow-forest-600/30;
+    @apply focus:ring-forest-500;
+    @apply active:scale-[0.98];
+    font-family: var(--font-body);
+  }
+
+  /* Secondary Button - Walnut */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2;
+    @apply px-6 py-3 font-semibold text-sm uppercase tracking-wider;
+    @apply rounded-lg transition-all duration-200;
+    @apply cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply bg-walnut-700 text-cream-50;
+    @apply hover:bg-walnut-800 hover:-translate-y-0.5;
+    @apply hover:shadow-lg hover:shadow-walnut-700/30;
+    @apply focus:ring-walnut-500;
+    @apply active:scale-[0.98];
+    font-family: var(--font-body);
+  }
+
+  /* Accent Button - Copper */
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2;
+    @apply px-6 py-3 font-semibold text-sm uppercase tracking-wider;
+    @apply rounded-lg transition-all duration-200;
+    @apply cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply bg-copper-500 text-white;
+    @apply hover:bg-copper-600 hover:-translate-y-0.5;
+    @apply hover:shadow-lg hover:shadow-copper-500/30;
+    @apply focus:ring-copper-500;
+    @apply active:scale-[0.98];
+    font-family: var(--font-body);
+  }
+
+  /* Outline Button */
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2;
+    @apply px-6 py-3 font-semibold text-sm uppercase tracking-wider;
+    @apply rounded-lg transition-all duration-200;
+    @apply cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply bg-transparent text-forest-700 border-2 border-forest-600;
+    @apply hover:bg-forest-600 hover:text-white hover:-translate-y-0.5;
+    @apply focus:ring-forest-500;
+    @apply active:scale-[0.98];
+    font-family: var(--font-body);
+  }
+
+  /* Ghost Button - For Dark Backgrounds */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2;
+    @apply px-6 py-3 font-semibold text-sm uppercase tracking-wider;
+    @apply rounded-lg transition-all duration-200;
+    @apply cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply bg-transparent text-cream-50 border-2 border-cream-200/50;
+    @apply hover:bg-cream-50 hover:text-charcoal-900 hover:-translate-y-0.5;
+    @apply focus:ring-cream-300;
+    @apply active:scale-[0.98];
+    font-family: var(--font-body);
+  }
+
+  /* White Button - For Colored Backgrounds */
+  .btn-white {
+    @apply inline-flex items-center justify-center gap-2;
+    @apply px-6 py-3 font-semibold text-sm uppercase tracking-wider;
+    @apply rounded-lg transition-all duration-200;
+    @apply cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply bg-white text-forest-700;
+    @apply hover:bg-cream-100 hover:-translate-y-0.5;
+    @apply hover:shadow-lg;
+    @apply focus:ring-cream-300;
+    @apply active:scale-[0.98];
+    font-family: var(--font-body);
+  }
+
+  /* Button Sizes - Use as additional classes */
+  .btn-sm {
+    @apply px-4 py-2 text-xs;
+  }
+
+  .btn-lg {
+    @apply px-8 py-4 text-base;
+  }
+
+  .btn-xl {
+    @apply px-10 py-5 text-lg;
+  }
+}
+
+/* ============================================
+   CARD COMPONENTS
+   ============================================ */
+@layer components {
+  /* Base Card */
+  .card {
+    @apply bg-white rounded-2xl p-6 md:p-8;
+    @apply shadow-sm border border-cream-200;
+    @apply transition-all duration-300;
+    @apply hover:shadow-xl hover:-translate-y-1;
+  }
+
+  .card-hover {
+    @apply hover:border-forest-200;
+  }
+
+  /* Feature Card */
+  .card-feature {
+    @apply bg-white rounded-2xl p-6 md:p-8;
+    @apply shadow-sm border border-cream-200;
+    @apply transition-all duration-300;
+    @apply hover:shadow-xl hover:-translate-y-1;
+    @apply hover:border-copper-300 hover:shadow-copper-500/10;
+  }
+
+  /* Service Card */
+  .card-service {
+    @apply bg-white rounded-2xl overflow-hidden;
+    @apply shadow-md border border-cream-200;
+    @apply transition-all duration-300;
+    @apply hover:shadow-2xl hover:-translate-y-2;
+  }
+
+  /* Testimonial Card */
+  .card-testimonial {
+    @apply bg-cream-50 rounded-2xl p-6 md:p-8;
+    @apply border border-cream-200;
+    @apply transition-all duration-300;
+    @apply hover:shadow-lg;
+  }
+
+  /* Glass Card - For Dark Backgrounds */
+  .card-glass {
+    @apply bg-white/10 backdrop-blur-md rounded-2xl p-6 md:p-8;
+    @apply border border-white/20;
+    @apply transition-all duration-300;
+    @apply hover:bg-white/15;
+  }
+}
+
+/* ============================================
+   FORM COMPONENTS
+   ============================================ */
+@layer components {
+  /* Input Base */
+  .form-input {
+    @apply w-full px-4 py-3.5;
+    @apply border-2 border-cream-300 rounded-xl;
+    @apply bg-white text-charcoal-800 placeholder-charcoal-400;
+    @apply transition-all duration-200;
+    @apply focus:outline-none focus:border-forest-500 focus:ring-4 focus:ring-forest-500/10;
+    font-family: var(--font-body);
+  }
+
+  .form-input-error {
+    @apply border-copper-500 focus:border-copper-500 focus:ring-copper-500/10;
+  }
+
+  /* Select */
+  .form-select {
+    @apply w-full px-4 py-3.5;
+    @apply border-2 border-cream-300 rounded-xl;
+    @apply bg-white text-charcoal-800 placeholder-charcoal-400;
+    @apply transition-all duration-200;
+    @apply focus:outline-none focus:border-forest-500 focus:ring-4 focus:ring-forest-500/10;
+    @apply appearance-none cursor-pointer pr-12;
+    font-family: var(--font-body);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%234A4540' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 1rem center;
+    background-repeat: no-repeat;
+    background-size: 1.25rem;
+  }
+
+  /* Textarea */
+  .form-textarea {
+    @apply w-full px-4 py-3.5;
+    @apply border-2 border-cream-300 rounded-xl;
+    @apply bg-white text-charcoal-800 placeholder-charcoal-400;
+    @apply transition-all duration-200;
+    @apply focus:outline-none focus:border-forest-500 focus:ring-4 focus:ring-forest-500/10;
+    @apply resize-none;
+    font-family: var(--font-body);
+    min-height: 150px;
+  }
+
+  /* Label */
+  .form-label {
+    @apply block text-sm font-semibold text-charcoal-700 mb-2 uppercase tracking-wider;
+    font-family: var(--font-body);
+  }
+
+  /* Checkbox */
+  .form-checkbox {
+    @apply w-5 h-5 rounded border-2 border-cream-400;
+    @apply text-forest-600 cursor-pointer;
+    @apply focus:ring-2 focus:ring-forest-500 focus:ring-offset-2;
+  }
+}
+
+/* ============================================
+   TYPOGRAPHY UTILITIES
+   ============================================ */
+@layer utilities {
+  /* Display Text */
+  .text-display {
+    font-family: var(--font-display);
+    @apply font-bold tracking-tight;
+  }
+
+  .text-display-xl {
+    font-family: var(--font-display);
+    @apply text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-none;
+  }
+
+  .text-display-lg {
+    font-family: var(--font-display);
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight;
+  }
+
+  /* Body Text */
+  .text-body-lg {
+    @apply text-lg md:text-xl leading-relaxed;
+  }
+
+  .text-body-base {
+    @apply text-base leading-relaxed;
+  }
+
+  .text-body-sm {
+    @apply text-sm leading-relaxed;
+  }
+
+  /* Label/Caption */
+  .text-label {
+    @apply text-sm font-semibold uppercase tracking-wider;
+    font-family: var(--font-body);
+  }
+
+  .text-caption {
+    @apply text-xs uppercase tracking-widest font-medium;
+    font-family: var(--font-body);
+  }
+
+  /* Special Text Effects */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-forest-600 via-copper-500 to-walnut-600;
+  }
+
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(42, 39, 36, 0.3);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(42, 39, 36, 0.4);
+  }
+}
+
+/* ============================================
+   BADGE COMPONENTS
+   ============================================ */
+@layer components {
+  .badge-forest {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5;
+    @apply rounded-full text-xs font-semibold uppercase tracking-wider;
+    @apply bg-forest-100 text-forest-700;
+    font-family: var(--font-body);
+  }
+
+  .badge-copper {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5;
+    @apply rounded-full text-xs font-semibold uppercase tracking-wider;
+    @apply bg-copper-100 text-copper-700;
+    font-family: var(--font-body);
+  }
+
+  .badge-walnut {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5;
+    @apply rounded-full text-xs font-semibold uppercase tracking-wider;
+    @apply bg-walnut-100 text-walnut-700;
+    font-family: var(--font-body);
+  }
+
+  .badge-cream {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5;
+    @apply rounded-full text-xs font-semibold uppercase tracking-wider;
+    @apply bg-cream-200 text-charcoal-700;
+    font-family: var(--font-body);
+  }
+
+  .badge-white {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5;
+    @apply rounded-full text-xs font-semibold uppercase tracking-wider;
+    @apply bg-white/20 text-white backdrop-blur-sm;
+    font-family: var(--font-body);
+  }
+}
+
+/* ============================================
+   DECORATIVE ELEMENTS
+   ============================================ */
+@layer utilities {
+  /* Section Divider Line */
+  .section-line {
+    @apply w-20 h-1 bg-copper-500 mb-6;
+  }
+
+  .section-line-center {
+    @apply w-20 h-1 bg-copper-500 mb-6 mx-auto;
+  }
+
+  /* Decorative Marker */
+  .marker {
+    @apply w-3 h-3 bg-copper-500 rounded-full flex-shrink-0;
+  }
+
+  /* Gradient Overlays */
+  .overlay-dark {
+    @apply bg-gradient-to-r from-charcoal-950/90 via-charcoal-900/70 to-charcoal-900/50;
+  }
+
+  .overlay-forest {
+    @apply bg-gradient-to-r from-forest-950/90 via-forest-900/70 to-forest-900/50;
+  }
+
+  .overlay-walnut {
+    @apply bg-gradient-to-r from-walnut-950/90 via-walnut-900/70 to-walnut-900/50;
+  }
+
+  /* Diagonal Cut */
+  .diagonal-top {
+    clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
+  }
+
+  @media (min-width: 768px) {
+    .diagonal-top {
+      clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+    }
+  }
+}
+
+/* ============================================
+   ANIMATIONS & KEYFRAMES
+   ============================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(74, 124, 89, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(74, 124, 89, 0);
+  }
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Animation Utilities */
+@layer utilities {
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.4s ease forwards;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.6s ease forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.6s ease forwards;
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  .animate-pulse-subtle {
+    animation: pulse-subtle 2s ease-in-out infinite;
+  }
+
+  .animate-bounce-slow {
+    animation: bounce-slow 2s ease-in-out infinite;
+  }
+
+  /* Animation Delays */
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+  .delay-600 { animation-delay: 600ms; }
+  .delay-700 { animation-delay: 700ms; }
+  .delay-800 { animation-delay: 800ms; }
+}
+
+/* ============================================
+   HOVER & TRANSITION EFFECTS
+   ============================================ */
+@layer utilities {
+  /* Image Zoom */
+  .img-zoom {
+    @apply transition-transform duration-500 ease-out;
+  }
+
+  .group:hover .img-zoom {
+    @apply scale-105;
+  }
+
+  /* Link Underline Effect */
+  .link-underline {
+    @apply relative;
+  }
+
+  .link-underline::after {
+    content: '';
+    @apply absolute left-0 bottom-0 w-0 h-0.5 bg-copper-500;
+    @apply transition-all duration-300;
+  }
+
+  .link-underline:hover::after {
+    @apply w-full;
+  }
+
+  /* Lift Effect */
+  .hover-lift {
+    @apply transition-all duration-300;
+  }
+
+  .hover-lift:hover {
+    @apply -translate-y-1 shadow-xl;
+  }
+
+  /* Glow Effect */
+  .hover-glow {
+    @apply transition-all duration-300;
+  }
+
+  .hover-glow:hover {
+    @apply shadow-lg shadow-forest-500/20;
+  }
+}
+
+/* ============================================
+   TRUST BAR COMPONENT
+   ============================================ */
+@layer components {
+  .trust-bar {
+    @apply bg-forest-700 text-cream-50 py-4 md:py-6;
+  }
+
+  .trust-item {
+    @apply flex items-center gap-2 text-sm md:text-base font-medium;
+  }
+
+  .trust-icon {
+    @apply w-5 h-5 text-copper-400;
+  }
+}
+
+/* ============================================
+   SCROLLBAR STYLING
+   ============================================ */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-cream-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-charcoal-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-charcoal-400;
+}
+
+/* ============================================
+   FOCUS STYLES (Accessibility)
+   ============================================ */
+a:focus-visible,
+button:focus-visible {
+  @apply outline-2 outline-offset-2 outline-forest-500;
+  @apply rounded-sm;
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  h1 {
+    @apply text-3xl;
+  }
+
+  h2 {
+    @apply text-2xl;
+  }
+
+  h3 {
+    @apply text-xl;
+  }
+}
+
+/* ============================================
+   REDUCED MOTION SUPPORT
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    @apply bg-white text-black;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
