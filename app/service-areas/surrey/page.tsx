@@ -1,58 +1,53 @@
-import Link from 'next/link'
 import { Metadata } from 'next'
-import { Phone } from 'lucide-react'
+import ServiceAreaTemplate from '@/app/components/ServiceAreaTemplate'
 
 export const metadata: Metadata = {
-  title: 'Floor Leveling & Hardwood Installation in Surrey, BC',
-  description: 'Professional floor leveling and hardwood installation in Surrey. Local expertise, 5-year warranty, 20+ years experience.',
+  title: 'Floor Leveling & Hardwood Installation in Surrey, BC | PROMARK FLOORING',
+  description: 'Professional floor leveling and hardwood installation services in Surrey, BC. Local expertise, 5-year warranty, 20+ years experience. Free quotes for Surrey residents.',
+  keywords: ['floor leveling surrey', 'hardwood flooring surrey', 'flooring contractor surrey bc', 'surrey floor installation'],
 }
 
-export default function Page() {
+export default function SurreyPage() {
   return (
-    <>
-      <section className="relative bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20">
-        <div className="container-custom">
-          <h1>Floor Leveling & Hardwood Installation in Surrey, BC</h1>
-          <p className="text-xl mb-8">Professional flooring services throughout Surrey and surrounding areas</p>
-          <Link href="/quote" className="btn-primary text-center">Get Free Quote</Link>
-        </div>
-      </section>
-      <section className="section-padding">
-        <div className="container-custom max-w-4xl">
-          <h2>Serving Surrey with Expert Flooring Services</h2>
-          <p className="text-lg text-gray-700 mb-4">
-            PROMARK FLOORING proudly serves Surrey homeowners, businesses, and contractors. With over 20 years of experience, we provide expert floor leveling, hardwood installation, stair work, and repair services throughout Surrey.
-          </p>
-          <p className="text-lg text-gray-700">
-            Our services include floor leveling with industry-leading 5-year warranty, professional hardwood flooring installation, staircase installation and renovation, and comprehensive floor repair and maintenance.
-          </p>
-        </div>
-      </section>
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <h2 className="text-center mb-8">Our Surrey Services</h2>
-          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            <Link href="/services/floor-leveling" className="card hover:shadow-lg">
-              <h3 className="font-bold mb-2">Floor Leveling</h3>
-              <p className="text-gray-700">5-year warranty floor leveling for Surrey properties</p>
-            </Link>
-            <Link href="/services/hardwood-installation" className="card hover:shadow-lg">
-              <h3 className="font-bold mb-2">Hardwood Installation</h3>
-              <p className="text-gray-700">Expert hardwood flooring in Surrey</p>
-            </Link>
-          </div>
-        </div>
-      </section>
-      <section className="section-padding bg-primary-red text-white text-center">
-        <div className="container-custom">
-          <h2 className="text-white mb-4">Get Your Free Quote in Surrey</h2>
-          <p className="text-xl mb-8">Contact us today for professional flooring services</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/quote" className="bg-white text-primary-red px-8 py-4 rounded-lg font-semibold">Request Free Quote</Link>
-            <a href="tel:+16043536077" className="border-2 border-white px-8 py-4 rounded-lg font-semibold"><Phone className="inline mr-2" size={20} />Call (604) 353-6077</a>
-          </div>
-        </div>
-      </section>
-    </>
+    <ServiceAreaTemplate
+      cityName="Surrey"
+      heroDescription="Proudly serving Surrey homeowners, businesses, and contractors with expert flooring services. Local knowledge, proven results, 5-year warranty."
+      introTitle="Your Trusted Surrey Flooring Experts"
+      introContent={[
+        "PROMARK FLOORING has been serving the Surrey community for over 20 years. As BC's second-largest city, Surrey offers an incredible diversity of properties—from new construction in South Surrey to established neighborhoods in Newton, Fleetwood, and Guildford.",
+        "Whether you're building a new home, renovating an existing property, or managing commercial flooring projects, we bring the expertise and professionalism Surrey residents deserve. Our team understands Surrey's rapid growth and unique housing market, delivering quality workmanship that stands the test of time."
+      ]}
+      services={[
+        { title: "Floor Leveling in Surrey", desc: "Correct uneven floors in Surrey homes and businesses with our industry-leading 5-year warranty. Perfect for new construction and renovations alike.", link: "/services/floor-leveling" },
+        { title: "Hardwood Installation in Surrey", desc: "Install beautiful hardwood floors throughout your Surrey property. We work with builders, homeowners, and commercial clients throughout the city.", link: "/services/hardwood-installation" },
+        { title: "Stair Installation in Surrey", desc: "Transform your Surrey home's staircase with professional installation and refinishing. From custom builds to renovation projects.", link: "/services/stairs" },
+        { title: "Floor Repair in Surrey", desc: "Restore and repair existing floors in Surrey properties. Water damage restoration, refinishing, and ongoing maintenance.", link: "/services/repair-maintenance" }
+      ]}
+      benefits={[
+        "Local Knowledge: Familiar with Surrey's diverse neighborhoods and property types",
+        "New Construction Ready: Experience working with Surrey builders and developers",
+        "Fast Response: Quick service throughout Surrey's expansive geography",
+        "Competitive Pricing: Fair rates for residential and commercial projects",
+        "Commercial Expertise: We handle large-scale Surrey business projects",
+        "Licensed & Insured: Fully covered for all Surrey residential and commercial work"
+      ]}
+      neighborhoods={[
+        'Newton', 'Fleetwood', 'Guildford', 'Whalley',
+        'South Surrey', 'Cloverdale', 'Sullivan', 'Fraser Heights',
+        'Morgan Creek', 'Panorama Ridge', 'Port Kells', 'City Centre'
+      ]}
+      faqs={[
+        { q: "Do you work with Surrey home builders?", a: "Yes! We work with many Surrey builders and developers on new construction projects. We offer competitive rates for multi-unit projects and can coordinate with your construction schedule." },
+        { q: "Can you service South Surrey?", a: "Absolutely. We serve all of Surrey including South Surrey, Morgan Creek, and the Semiahmoo Peninsula. Our team is equipped to handle projects anywhere in the city." },
+        { q: "What's the turnaround time for Surrey projects?", a: "We typically provide quotes within 48 hours and can start most Surrey projects within 1-2 weeks. For large projects or urgent needs, contact us to discuss expedited scheduling." }
+      ]}
+      nearbyAreas={[
+        { name: 'Vancouver', slug: 'vancouver' },
+        { name: 'Burnaby', slug: 'burnaby' },
+        { name: 'Delta', slug: 'delta' },
+        { name: 'Langley', slug: 'langley' },
+        { name: 'North Vancouver', slug: 'north-vancouver' }
+      ]}
+    />
   )
 }

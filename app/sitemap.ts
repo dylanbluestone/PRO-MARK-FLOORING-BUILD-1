@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/faq',
     '/contact',
     '/quote',
+    '/service-areas',
     '/industries',
     '/industries/residential',
     '/industries/commercial'

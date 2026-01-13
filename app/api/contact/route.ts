@@ -1,7 +1,15 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Lazy initialization to prevent build-time errors
+let resend: Resend | null = null;
+
+function getResend() {
+  if (!resend && process.env.RESEND_API_KEY) {
+    resend = new Resend(process.env.RESEND_API_KEY);
+  }
+  return resend;
+}
 
 export async function POST(request: Request) {
   try {
@@ -16,8 +24,17 @@ export async function POST(request: Request) {
       );
     }
 
+    const resendClient = getResend();
+    if (!resendClient) {
+      console.error('Resend API key not configured');
+      return NextResponse.json(
+        { error: 'Email service not configured' },
+        { status: 500 }
+      );
+    }
+
     // Send email using Resend
-    const data = await resend.emails.send({
+    const data = await resendClient.emails.send({
       from: 'PROMARK FLOORING Website <noreply@promarkflooring.com>', // TODO: Update with actual domain
       to: ['promarkflooring@hotmail.com'],
       subject: `New Contact Form Submission from ${name}`,

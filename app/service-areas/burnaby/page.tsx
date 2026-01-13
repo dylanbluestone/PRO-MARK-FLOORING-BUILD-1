@@ -1,58 +1,53 @@
-import Link from 'next/link'
 import { Metadata } from 'next'
-import { Phone } from 'lucide-react'
+import ServiceAreaTemplate from '@/app/components/ServiceAreaTemplate'
 
 export const metadata: Metadata = {
-  title: 'Floor Leveling & Hardwood Installation in Burnaby, BC',
-  description: 'Professional floor leveling and hardwood installation in Burnaby. Local expertise, 5-year warranty, 20+ years experience.',
+  title: 'Floor Leveling & Hardwood Installation in Burnaby, BC | PROMARK FLOORING',
+  description: 'Professional floor leveling and hardwood installation services in Burnaby, BC. Local expertise, 5-year warranty, 20+ years experience. Free quotes for Burnaby residents.',
+  keywords: ['floor leveling burnaby', 'hardwood flooring burnaby', 'flooring contractor burnaby bc', 'burnaby floor installation'],
 }
 
-export default function Page() {
+export default function BurnabyPage() {
   return (
-    <>
-      <section className="relative bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20">
-        <div className="container-custom">
-          <h1>Floor Leveling & Hardwood Installation in Burnaby, BC</h1>
-          <p className="text-xl mb-8">Professional flooring services throughout Burnaby and surrounding areas</p>
-          <Link href="/quote" className="btn-primary text-center">Get Free Quote</Link>
-        </div>
-      </section>
-      <section className="section-padding">
-        <div className="container-custom max-w-4xl">
-          <h2>Serving Burnaby with Expert Flooring Services</h2>
-          <p className="text-lg text-gray-700 mb-4">
-            PROMARK FLOORING proudly serves Burnaby homeowners, businesses, and contractors. With over 20 years of experience, we provide expert floor leveling, hardwood installation, stair work, and repair services throughout Burnaby.
-          </p>
-          <p className="text-lg text-gray-700">
-            Our services include floor leveling with industry-leading 5-year warranty, professional hardwood flooring installation, staircase installation and renovation, and comprehensive floor repair and maintenance.
-          </p>
-        </div>
-      </section>
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <h2 className="text-center mb-8">Our Burnaby Services</h2>
-          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            <Link href="/services/floor-leveling" className="card hover:shadow-lg">
-              <h3 className="font-bold mb-2">Floor Leveling</h3>
-              <p className="text-gray-700">5-year warranty floor leveling for Burnaby properties</p>
-            </Link>
-            <Link href="/services/hardwood-installation" className="card hover:shadow-lg">
-              <h3 className="font-bold mb-2">Hardwood Installation</h3>
-              <p className="text-gray-700">Expert hardwood flooring in Burnaby</p>
-            </Link>
-          </div>
-        </div>
-      </section>
-      <section className="section-padding bg-primary-red text-white text-center">
-        <div className="container-custom">
-          <h2 className="text-white mb-4">Get Your Free Quote in Burnaby</h2>
-          <p className="text-xl mb-8">Contact us today for professional flooring services</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/quote" className="bg-white text-primary-red px-8 py-4 rounded-lg font-semibold">Request Free Quote</Link>
-            <a href="tel:+16043536077" className="border-2 border-white px-8 py-4 rounded-lg font-semibold"><Phone className="inline mr-2" size={20} />Call (604) 353-6077</a>
-          </div>
-        </div>
-      </section>
-    </>
+    <ServiceAreaTemplate
+      cityName="Burnaby"
+      heroDescription="Proudly serving Burnaby homeowners, businesses, and contractors with expert flooring services. Local knowledge, proven results, 5-year warranty."
+      introTitle="Your Trusted Burnaby Flooring Experts"
+      introContent={[
+        "PROMARK FLOORING has been serving the Burnaby community for over 20 years. From the high-rises of Metrotown and Brentwood to the established homes of Burnaby Heights and Capitol Hill, we understand the diverse flooring needs of this growing city.",
+        "Whether you're renovating a condo near SkyTrain stations, updating a character home in Deer Lake area, or improving a commercial space in our thriving business districts, we deliver the quality workmanship Burnaby residents expect. Our local expertise means fast response times and personalized service throughout all Burnaby neighborhoods."
+      ]}
+      services={[
+        { title: "Floor Leveling in Burnaby", desc: "Correct uneven floors in Burnaby homes and businesses with our industry-leading 5-year warranty. Expert leveling for condos, houses, and commercial properties.", link: "/services/floor-leveling" },
+        { title: "Hardwood Installation in Burnaby", desc: "Install beautiful hardwood floors throughout your Burnaby property. Solid hardwood, engineered hardwood, and premium laminate options.", link: "/services/hardwood-installation" },
+        { title: "Stair Installation in Burnaby", desc: "Transform your Burnaby home's staircase with professional installation and refinishing. Custom hardwood stairs for any style.", link: "/services/stairs" },
+        { title: "Floor Repair in Burnaby", desc: "Restore and repair existing floors in Burnaby properties. Water damage restoration, refinishing, and maintenance services.", link: "/services/repair-maintenance" }
+      ]}
+      benefits={[
+        "Local Knowledge: Familiar with Burnaby building codes and strata requirements",
+        "Fast Response: Quick turnaround on quotes and project starts throughout Burnaby",
+        "High-Rise Experience: Extensive experience with Metrotown and Brentwood tower projects",
+        "Noise Compliance: We meet acoustic underlay requirements for multi-family buildings",
+        "Established Home Expertise: Experience with older Burnaby homes and their unique challenges",
+        "Licensed & Insured: Fully covered for all Burnaby residential and commercial work"
+      ]}
+      neighborhoods={[
+        'Metrotown', 'Brentwood', 'Burnaby Heights', 'Capitol Hill',
+        'Edmonds', 'Deer Lake', 'Highgate', 'Forest Grove',
+        'Lougheed', 'Cameron', 'Sullivan Heights', 'Big Bend'
+      ]}
+      faqs={[
+        { q: "Do you work on Burnaby high-rise condos?", a: "Yes! We have extensive experience with Burnaby's many high-rise developments, especially in Metrotown and Brentwood. We're familiar with building access requirements, noise restrictions, and acoustic underlay specifications." },
+        { q: "Can you handle strata requirements?", a: "Absolutely. We provide all documentation required by Burnaby strata councils, including insurance certificates, contractor agreements, and completion reports." },
+        { q: "What areas of Burnaby do you serve?", a: "We serve all of Burnaby including Metrotown, Brentwood, Burnaby Heights, Capitol Hill, Edmonds, Deer Lake, and all surrounding neighborhoods. No area is too far!" }
+      ]}
+      nearbyAreas={[
+        { name: 'Vancouver', slug: 'vancouver' },
+        { name: 'North Vancouver', slug: 'north-vancouver' },
+        { name: 'Surrey', slug: 'surrey' },
+        { name: 'Port Coquitlam', slug: 'port-coquitlam' },
+        { name: 'Delta', slug: 'delta' }
+      ]}
+    />
   )
 }

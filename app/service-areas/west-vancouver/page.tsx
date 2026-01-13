@@ -1,58 +1,53 @@
-import Link from 'next/link'
 import { Metadata } from 'next'
-import { Phone } from 'lucide-react'
+import ServiceAreaTemplate from '@/app/components/ServiceAreaTemplate'
 
 export const metadata: Metadata = {
-  title: 'Floor Leveling & Hardwood Installation in West Vancouver, BC',
-  description: 'Professional floor leveling and hardwood installation in West Vancouver. Local expertise, 5-year warranty, 20+ years experience.',
+  title: 'Floor Leveling & Hardwood Installation in West Vancouver, BC | PROMARK FLOORING',
+  description: 'Professional floor leveling and hardwood installation services in West Vancouver, BC. Local expertise, 5-year warranty, 20+ years experience. Free quotes for West Vancouver residents.',
+  keywords: ['floor leveling west vancouver', 'hardwood flooring west vancouver', 'flooring contractor west vancouver bc', 'west vancouver floor installation'],
 }
 
-export default function Page() {
+export default function WestVancouverPage() {
   return (
-    <>
-      <section className="relative bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20">
-        <div className="container-custom">
-          <h1>Floor Leveling & Hardwood Installation in West Vancouver, BC</h1>
-          <p className="text-xl mb-8">Professional flooring services throughout West Vancouver and surrounding areas</p>
-          <Link href="/quote" className="btn-primary text-center">Get Free Quote</Link>
-        </div>
-      </section>
-      <section className="section-padding">
-        <div className="container-custom max-w-4xl">
-          <h2>Serving West Vancouver with Expert Flooring Services</h2>
-          <p className="text-lg text-gray-700 mb-4">
-            PROMARK FLOORING proudly serves West Vancouver homeowners, businesses, and contractors. With over 20 years of experience, we provide expert floor leveling, hardwood installation, stair work, and repair services throughout West Vancouver.
-          </p>
-          <p className="text-lg text-gray-700">
-            Our services include floor leveling with industry-leading 5-year warranty, professional hardwood flooring installation, staircase installation and renovation, and comprehensive floor repair and maintenance.
-          </p>
-        </div>
-      </section>
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <h2 className="text-center mb-8">Our West Vancouver Services</h2>
-          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            <Link href="/services/floor-leveling" className="card hover:shadow-lg">
-              <h3 className="font-bold mb-2">Floor Leveling</h3>
-              <p className="text-gray-700">5-year warranty floor leveling for West Vancouver properties</p>
-            </Link>
-            <Link href="/services/hardwood-installation" className="card hover:shadow-lg">
-              <h3 className="font-bold mb-2">Hardwood Installation</h3>
-              <p className="text-gray-700">Expert hardwood flooring in West Vancouver</p>
-            </Link>
-          </div>
-        </div>
-      </section>
-      <section className="section-padding bg-primary-red text-white text-center">
-        <div className="container-custom">
-          <h2 className="text-white mb-4">Get Your Free Quote in West Vancouver</h2>
-          <p className="text-xl mb-8">Contact us today for professional flooring services</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/quote" className="bg-white text-primary-red px-8 py-4 rounded-lg font-semibold">Request Free Quote</Link>
-            <a href="tel:+16043536077" className="border-2 border-white px-8 py-4 rounded-lg font-semibold"><Phone className="inline mr-2" size={20} />Call (604) 353-6077</a>
-          </div>
-        </div>
-      </section>
-    </>
+    <ServiceAreaTemplate
+      cityName="West Vancouver"
+      heroDescription="Proudly serving West Vancouver homeowners with premium flooring services. Exceptional craftsmanship for discerning clients, 5-year warranty."
+      introTitle="Your Trusted West Vancouver Flooring Experts"
+      introContent={[
+        "PROMARK FLOORING has been serving the West Vancouver community for over 20 years. We understand that West Vancouver homeowners expect nothing but the finest craftsmanship. From the prestigious British Properties to the charming homes of Ambleside and Dundarave, we deliver flooring solutions that match the exceptional standards of this beautiful community.",
+        "Whether you're renovating a luxury estate, updating a mid-century modern gem, or installing new flooring in a waterfront property, we bring the expertise and attention to detail that West Vancouver's discerning homeowners require. Our team is experienced with high-end materials and custom installations."
+      ]}
+      services={[
+        { title: "Floor Leveling in West Vancouver", desc: "Correct uneven floors in West Vancouver homes with our industry-leading 5-year warranty. Expert solutions for hillside estates and heritage properties.", link: "/services/floor-leveling" },
+        { title: "Hardwood Installation in West Vancouver", desc: "Install premium hardwood floors throughout your West Vancouver property. Wide plank, exotic species, and custom patterns available.", link: "/services/hardwood-installation" },
+        { title: "Stair Installation in West Vancouver", desc: "Transform your West Vancouver home's staircase with professional installation and refinishing. Custom designs for luxury residences.", link: "/services/stairs" },
+        { title: "Floor Repair in West Vancouver", desc: "Restore and repair existing floors in West Vancouver properties. Expert refinishing and maintenance for premium flooring.", link: "/services/repair-maintenance" }
+      ]}
+      benefits={[
+        "Luxury Home Experience: Extensive work with West Vancouver's finest properties",
+        "Premium Materials: Access to high-end hardwoods and custom finishing options",
+        "Hillside Expertise: Skilled at complex leveling for sloped West Vancouver lots",
+        "Attention to Detail: Meticulous craftsmanship for discerning homeowners",
+        "Respectful Service: We understand and respect luxury home environments",
+        "Licensed & Insured: Fully covered for all West Vancouver residential work"
+      ]}
+      neighborhoods={[
+        'British Properties', 'Ambleside', 'Dundarave', 'Caulfeild',
+        'Horseshoe Bay', 'Eagle Harbour', 'Gleneagles', 'Chartwell',
+        'Westmount', 'Altamont', 'Park Royal', 'Sentinel Hill'
+      ]}
+      faqs={[
+        { q: "Do you work with high-end materials for West Vancouver homes?", a: "Absolutely. We have extensive experience with premium hardwoods including wide-plank options, exotic species, and custom staining. We can source and install the finest materials to match West Vancouver's luxury homes." },
+        { q: "Can you work on properties in the British Properties?", a: "Yes! We regularly service the British Properties and other hillside estates. Our team is experienced with the unique access requirements and complex installations these properties often require." },
+        { q: "Do you provide custom flooring designs?", a: "Yes, we offer custom patterns, borders, medallions, and unique installations. We work with homeowners and designers to create one-of-a-kind flooring that complements your West Vancouver home's architecture." }
+      ]}
+      nearbyAreas={[
+        { name: 'North Vancouver', slug: 'north-vancouver' },
+        { name: 'Vancouver', slug: 'vancouver' },
+        { name: 'Burnaby', slug: 'burnaby' },
+        { name: 'Surrey', slug: 'surrey' },
+        { name: 'Delta', slug: 'delta' }
+      ]}
+    />
   )
 }

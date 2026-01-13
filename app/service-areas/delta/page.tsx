@@ -1,58 +1,53 @@
-import Link from 'next/link'
 import { Metadata } from 'next'
-import { Phone } from 'lucide-react'
+import ServiceAreaTemplate from '@/app/components/ServiceAreaTemplate'
 
 export const metadata: Metadata = {
-  title: 'Floor Leveling & Hardwood Installation in Delta, BC',
-  description: 'Professional floor leveling and hardwood installation in Delta. Local expertise, 5-year warranty, 20+ years experience.',
+  title: 'Floor Leveling & Hardwood Installation in Delta, BC | PROMARK FLOORING',
+  description: 'Professional floor leveling and hardwood installation services in Delta, BC. Local expertise, 5-year warranty, 20+ years experience. Free quotes for Delta residents.',
+  keywords: ['floor leveling delta', 'hardwood flooring delta', 'flooring contractor delta bc', 'delta floor installation'],
 }
 
-export default function Page() {
+export default function DeltaPage() {
   return (
-    <>
-      <section className="relative bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20">
-        <div className="container-custom">
-          <h1>Floor Leveling & Hardwood Installation in Delta, BC</h1>
-          <p className="text-xl mb-8">Professional flooring services throughout Delta and surrounding areas</p>
-          <Link href="/quote" className="btn-primary text-center">Get Free Quote</Link>
-        </div>
-      </section>
-      <section className="section-padding">
-        <div className="container-custom max-w-4xl">
-          <h2>Serving Delta with Expert Flooring Services</h2>
-          <p className="text-lg text-gray-700 mb-4">
-            PROMARK FLOORING proudly serves Delta homeowners, businesses, and contractors. With over 20 years of experience, we provide expert floor leveling, hardwood installation, stair work, and repair services throughout Delta.
-          </p>
-          <p className="text-lg text-gray-700">
-            Our services include floor leveling with industry-leading 5-year warranty, professional hardwood flooring installation, staircase installation and renovation, and comprehensive floor repair and maintenance.
-          </p>
-        </div>
-      </section>
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <h2 className="text-center mb-8">Our Delta Services</h2>
-          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            <Link href="/services/floor-leveling" className="card hover:shadow-lg">
-              <h3 className="font-bold mb-2">Floor Leveling</h3>
-              <p className="text-gray-700">5-year warranty floor leveling for Delta properties</p>
-            </Link>
-            <Link href="/services/hardwood-installation" className="card hover:shadow-lg">
-              <h3 className="font-bold mb-2">Hardwood Installation</h3>
-              <p className="text-gray-700">Expert hardwood flooring in Delta</p>
-            </Link>
-          </div>
-        </div>
-      </section>
-      <section className="section-padding bg-primary-red text-white text-center">
-        <div className="container-custom">
-          <h2 className="text-white mb-4">Get Your Free Quote in Delta</h2>
-          <p className="text-xl mb-8">Contact us today for professional flooring services</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/quote" className="bg-white text-primary-red px-8 py-4 rounded-lg font-semibold">Request Free Quote</Link>
-            <a href="tel:+16043536077" className="border-2 border-white px-8 py-4 rounded-lg font-semibold"><Phone className="inline mr-2" size={20} />Call (604) 353-6077</a>
-          </div>
-        </div>
-      </section>
-    </>
+    <ServiceAreaTemplate
+      cityName="Delta"
+      heroDescription="Proudly serving Delta homeowners, businesses, and contractors with expert flooring services. Local knowledge, proven results, 5-year warranty."
+      introTitle="Your Trusted Delta Flooring Experts"
+      introContent={[
+        "PROMARK FLOORING has been serving the Delta community for over 20 years. Delta's three distinct communities—Ladner, Tsawwassen, and North Delta—each have unique character and flooring needs. From heritage homes in Ladner Village to newer developments in Tsawwassen and family homes throughout North Delta, we understand this diverse municipality.",
+        "Whether you're renovating a character home near the harbour, updating a beach-area property in Tsawwassen, or improving your North Delta residence, we deliver quality workmanship that stands the test of time. Our team is experienced with Delta's varied housing stock and building requirements."
+      ]}
+      services={[
+        { title: "Floor Leveling in Delta", desc: "Correct uneven floors in Delta homes and businesses with our industry-leading 5-year warranty. Expert solutions for all three Delta communities.", link: "/services/floor-leveling" },
+        { title: "Hardwood Installation in Delta", desc: "Install beautiful hardwood floors throughout your Delta property. We understand the unique climate considerations of waterfront and rural properties.", link: "/services/hardwood-installation" },
+        { title: "Stair Installation in Delta", desc: "Transform your Delta home's staircase with professional installation and refinishing. From traditional to contemporary designs.", link: "/services/stairs" },
+        { title: "Floor Repair in Delta", desc: "Restore and repair existing floors in Delta properties. Water damage restoration, refinishing, and ongoing maintenance.", link: "/services/repair-maintenance" }
+      ]}
+      benefits={[
+        "Local Knowledge: Familiar with Ladner, Tsawwassen, and North Delta neighborhoods",
+        "Heritage Home Experience: Skilled at working with Delta's older character homes",
+        "Waterfront Expertise: Understanding of moisture management near coastal areas",
+        "Fast Response: Quick service throughout all Delta communities",
+        "Agricultural Area Experience: We work on rural and acreage properties",
+        "Licensed & Insured: Fully covered for all Delta residential and commercial work"
+      ]}
+      neighborhoods={[
+        'Ladner', 'Tsawwassen', 'North Delta', 'Ladner Village',
+        'Boundary Bay', 'Beach Grove', 'English Bluff', 'Pebble Hill',
+        'Sunshine Hills', 'Annieville', 'Scottsdale', 'Sunbury'
+      ]}
+      faqs={[
+        { q: "Do you service all three Delta communities?", a: "Yes! We serve Ladner, Tsawwassen, and North Delta equally. Our team is familiar with the unique characteristics of each community and can handle projects anywhere in the municipality." },
+        { q: "Can you work on heritage homes in Ladner?", a: "Absolutely. We have extensive experience with Delta's heritage properties, particularly in Ladner Village. We understand the care required when working with older homes and original materials." },
+        { q: "What about waterfront properties in Tsawwassen?", a: "We're experienced with waterfront and near-beach properties. We use appropriate moisture barriers and materials suited to coastal environments to ensure your flooring performs well in these conditions." }
+      ]}
+      nearbyAreas={[
+        { name: 'Surrey', slug: 'surrey' },
+        { name: 'Vancouver', slug: 'vancouver' },
+        { name: 'Burnaby', slug: 'burnaby' },
+        { name: 'Langley', slug: 'langley' },
+        { name: 'North Vancouver', slug: 'north-vancouver' }
+      ]}
+    />
   )
 }

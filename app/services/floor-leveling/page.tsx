@@ -1,15 +1,76 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Metadata } from 'next'
-import { Shield, CheckCircle, ArrowRight, Phone, Clock, Award } from 'lucide-react'
+import { Shield, CheckCircle, ArrowRight, Phone, Clock, Award, Star, Users, ChevronDown } from 'lucide-react'
 import { ServiceSchema } from '@/lib/schema-markup'
 
 export const metadata: Metadata = {
-  title: 'Professional Floor Leveling Services in Vancouver | 5-Year Warranty',
-  description: 'Expert floor leveling for residential and commercial properties in Vancouver, BC. Self-leveling compounds, concrete grinding, subfloor correction. 5-year warranty. Free quotes.',
+  title: 'Professional Floor Leveling Services Vancouver | 5-Year Warranty | PROMARK',
+  description: 'Expert floor leveling for residential and commercial properties in Vancouver, BC. Self-leveling compounds, concrete grinding, subfloor correction. Industry-leading 5-year warranty. Free quotes.',
   keywords: ['floor leveling vancouver', 'self leveling vancouver', 'concrete leveling bc', 'subfloor leveling', 'floor preparation vancouver', 'uneven floor repair'],
 }
 
 const serviceAreas = ['Vancouver', 'North Vancouver', 'West Vancouver', 'Burnaby', 'Surrey', 'Delta', 'Langley', 'Port Coquitlam', 'Maple Ridge', 'Mission']
+
+const processSteps = [
+  {
+    num: 1,
+    title: 'Initial Assessment & Consultation',
+    desc: 'We begin with a thorough on-site inspection using precision laser levels and moisture meters. You\'ll receive a detailed explanation of our findings, recommended solutions, and a transparent written quote.'
+  },
+  {
+    num: 2,
+    title: 'Surface Preparation',
+    desc: 'Proper preparation is critical. We clean and prepare the subfloor, grind down high spots, repair cracks, and install moisture barriers when required.'
+  },
+  {
+    num: 3,
+    title: 'Primer Application',
+    desc: 'We apply a professional bonding primer to ensure the self-leveling compound adheres properly and performs as designed.'
+  },
+  {
+    num: 4,
+    title: 'Leveling Compound Application',
+    desc: 'Using premium self-leveling compounds mixed to exact specifications, we pour and spread the material to create a perfectly flat surface.'
+  },
+  {
+    num: 5,
+    title: 'Curing & Quality Control',
+    desc: 'The compound cures within 24-48 hours. We perform final laser level measurements to verify the floor meets our strict flatness standards.'
+  },
+  {
+    num: 6,
+    title: 'Final Inspection & Handoff',
+    desc: 'We conduct a comprehensive inspection with you, provide warranty documentation, and prepare your floor for the next installation phase.'
+  }
+]
+
+const faqs = [
+  {
+    q: 'How do I know if my floor needs leveling?',
+    a: 'Signs include visible slopes or dips, balls rolling across the floor, gaps under furniture, cracked tiles, squeaky hardwood, doors that won\'t close properly, and visible cracks in the subfloor.'
+  },
+  {
+    q: 'How long does the floor leveling process take?',
+    a: 'Most residential projects take 1-3 days. The actual pour takes just a few hours, but proper preparation and curing time are essential. The compound typically cures within 24-48 hours.'
+  },
+  {
+    q: 'Can you level floors in occupied homes or businesses?',
+    a: 'Yes. While the work area must be cleared during the pour and initial curing, we can work in phases to minimize disruption. For businesses, we often schedule work during off-hours.'
+  },
+  {
+    q: 'What types of subfloors can be leveled?',
+    a: 'We level concrete slabs, wood subfloors, existing tile floors, and various other substrates. Each material requires different preparation and leveling techniques.'
+  },
+  {
+    q: 'Will floor leveling raise the floor height significantly?',
+    a: 'The height increase depends on how much leveling is needed. For minor corrections, we may add only 1/8" to 1/4". More significant unevenness may require 1/2" to 1" or more.'
+  },
+  {
+    q: 'Do you handle moisture issues before leveling?',
+    a: 'Absolutely. Moisture testing is critical. If we detect moisture issues, we\'ll identify the source and recommend solutions before leveling. This is covered by our warranty.'
+  }
+]
 
 export default function FloorLevelingPage() {
   const schema = ServiceSchema(
@@ -20,369 +81,435 @@ export default function FloorLevelingPage() {
 
   return (
     <>
-      {/* JSON-LD Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20">
-        <div className="container-custom">
-          <div className="max-w-4xl">
-            <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
-              Professional Floor Leveling in Vancouver & Fraser Valley
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-200">
-              Transform uneven, damaged floors into perfectly level surfaces. Industry-leading 5-year warranty. Over 20 years of expertise.
+      <main>
+        {/* Hero Section */}
+        <section className="relative bg-charcoal-900 py-20 md:py-28 overflow-hidden">
+          <div className="absolute inset-0">
+            <Image
+              src="/images/hero-leveling.jpg"
+              alt="Floor leveling in progress"
+              fill
+              className="object-cover opacity-30"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-charcoal-900 via-charcoal-900/95 to-charcoal-900/80" />
+          </div>
+
+          <div className="container-custom relative z-10">
+            <div className="max-w-3xl">
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 bg-forest-600/20 border border-forest-500/30 rounded-full px-4 py-2 mb-6">
+                <Shield size={16} className="text-forest-400" />
+                <span className="text-forest-300 text-sm font-medium">Industry-Leading 5-Year Warranty</span>
+              </div>
+
+              <h1
+                className="text-4xl md:text-5xl lg:text-6xl text-cream-50 mb-6"
+                style={{ fontFamily: 'var(--font-display)' }}
+              >
+                Professional Floor Leveling
+                <span className="text-copper-400 block mt-2">in Vancouver</span>
+              </h1>
+
+              <p className="text-lg md:text-xl text-charcoal-300 max-w-2xl mb-8">
+                Transform uneven, damaged floors into perfectly level surfaces. Over 20 years of expertise
+                serving Greater Vancouver and the Fraser Valley.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/quote" className="btn-primary btn-lg">
+                  Get Free Quote
+                  <ArrowRight size={18} />
+                </Link>
+                <a href="tel:+16043536077" className="btn-secondary btn-lg">
+                  <Phone size={18} />
+                  (604) 353-6077
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Trust Bar */}
+        <section className="bg-charcoal-800 py-5 border-y border-charcoal-700">
+          <div className="container-custom">
+            <div className="flex flex-wrap justify-center gap-6 md:gap-12">
+              <div className="flex items-center gap-2 text-cream-200">
+                <Shield className="text-forest-400" size={18} />
+                <span className="text-sm font-medium">5-Year Warranty</span>
+              </div>
+              <div className="flex items-center gap-2 text-cream-200">
+                <Award className="text-copper-400" size={18} />
+                <span className="text-sm font-medium">20+ Years Experience</span>
+              </div>
+              <div className="flex items-center gap-2 text-cream-200">
+                <Users className="text-forest-400" size={18} />
+                <span className="text-sm font-medium">Family-Owned & Local</span>
+              </div>
+              <div className="flex items-center gap-2 text-cream-200">
+                <Star className="text-copper-400" size={18} />
+                <span className="text-sm font-medium">5-Star Rated</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Introduction */}
+        <section className="py-16 md:py-20 bg-gradient-to-b from-cream-50 to-white">
+          <div className="container-custom">
+            <div className="max-w-4xl mx-auto">
+              <h2
+                className="text-3xl md:text-4xl text-charcoal-900 mb-6"
+                style={{ fontFamily: 'var(--font-display)' }}
+              >
+                What is Floor Leveling?
+              </h2>
+              <div className="prose prose-lg text-charcoal-700">
+                <p>
+                  Floor leveling is the critical process of correcting uneven, sloped, or damaged subfloors
+                  to create a perfectly flat surface for your finished flooring. Whether you're installing
+                  hardwood, tile, laminate, or any other flooring material, a level subfloor is essential
+                  for proper installation, longevity, and performance.
+                </p>
+                <p>
+                  Uneven floors aren't just an aesthetic issue—they cause serious problems. Tiles crack,
+                  hardwood buckles and squeaks, vinyl develops wrinkles, and doors refuse to close properly.
+                  Foundation settlement, water damage, age-related deterioration, and poor original
+                  construction all contribute to floor irregularities that worsen over time.
+                </p>
+                <p>
+                  At PROMARK FLOORING, we've spent over 20 years perfecting the art and science of floor
+                  leveling. Using state-of-the-art self-leveling compounds, precision concrete grinding,
+                  and expert subfloor repair techniques, we correct everything from minor dips to severe
+                  slopes. Our work creates the solid, level foundation your new flooring needs to look
+                  beautiful and last for decades.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Why Choose PROMARK */}
+        <section className="py-16 md:py-20 bg-charcoal-900">
+          <div className="container-custom">
+            <div className="text-center mb-12">
+              <h2
+                className="text-3xl md:text-4xl text-cream-50 mb-4"
+                style={{ fontFamily: 'var(--font-display)' }}
+              >
+                Why Choose PROMARK for Floor Leveling?
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              <div className="bg-charcoal-800 rounded-2xl p-8">
+                <div className="w-14 h-14 bg-forest-600/20 rounded-xl flex items-center justify-center mb-4">
+                  <Shield className="text-forest-400" size={28} />
+                </div>
+                <h3
+                  className="text-xl text-cream-100 mb-3"
+                  style={{ fontFamily: 'var(--font-display)' }}
+                >
+                  Industry-Leading 5-Year Warranty
+                </h3>
+                <p className="text-charcoal-400">
+                  We stand behind our floor leveling work with an exceptional 5-year warranty—one of the
+                  best in the industry. This comprehensive warranty covers both workmanship and materials,
+                  giving you complete peace of mind.
+                </p>
+              </div>
+
+              <div className="bg-charcoal-800 rounded-2xl p-8">
+                <div className="w-14 h-14 bg-copper-500/20 rounded-xl flex items-center justify-center mb-4">
+                  <Award className="text-copper-400" size={28} />
+                </div>
+                <h3
+                  className="text-xl text-cream-100 mb-3"
+                  style={{ fontFamily: 'var(--font-display)' }}
+                >
+                  20+ Years of Expertise
+                </h3>
+                <p className="text-charcoal-400">
+                  We've leveled thousands of floors across Greater Vancouver. Our extensive experience
+                  means we've encountered every type of floor problem—from simple dips to complex
+                  foundation issues.
+                </p>
+              </div>
+
+              <div className="bg-charcoal-800 rounded-2xl p-8">
+                <div className="w-14 h-14 bg-forest-600/20 rounded-xl flex items-center justify-center mb-4">
+                  <CheckCircle className="text-forest-400" size={28} />
+                </div>
+                <h3
+                  className="text-xl text-cream-100 mb-3"
+                  style={{ fontFamily: 'var(--font-display)' }}
+                >
+                  Premium Materials & Techniques
+                </h3>
+                <p className="text-charcoal-400">
+                  We use only professional-grade self-leveling compounds, moisture barriers, and
+                  reinforcement materials from trusted manufacturers. Our technicians are trained
+                  in advanced leveling techniques.
+                </p>
+              </div>
+
+              <div className="bg-charcoal-800 rounded-2xl p-8">
+                <div className="w-14 h-14 bg-copper-500/20 rounded-xl flex items-center justify-center mb-4">
+                  <Clock className="text-copper-400" size={28} />
+                </div>
+                <h3
+                  className="text-xl text-cream-100 mb-3"
+                  style={{ fontFamily: 'var(--font-display)' }}
+                >
+                  Efficient & Professional Process
+                </h3>
+                <p className="text-charcoal-400">
+                  We respect your time and property. Most residential floor leveling projects are
+                  completed in 1-3 days. We protect your home, work cleanly, and communicate clearly
+                  throughout the process.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Process Section */}
+        <section className="py-16 md:py-20 bg-gradient-to-b from-cream-50 to-white">
+          <div className="container-custom">
+            <div className="text-center mb-12">
+              <h2
+                className="text-3xl md:text-4xl text-charcoal-900 mb-4"
+                style={{ fontFamily: 'var(--font-display)' }}
+              >
+                Our Floor Leveling Process
+              </h2>
+              <p className="text-charcoal-600 max-w-2xl mx-auto">
+                A proven, methodical approach that ensures lasting results every time.
+              </p>
+            </div>
+
+            <div className="max-w-4xl mx-auto space-y-6">
+              {processSteps.map((step) => (
+                <div key={step.num} className="flex gap-6 bg-white rounded-2xl p-6 border border-cream-200 shadow-sm">
+                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-forest-600 to-forest-700 text-white rounded-xl flex items-center justify-center font-bold text-xl">
+                    {step.num}
+                  </div>
+                  <div>
+                    <h3
+                      className="text-xl text-charcoal-900 mb-2"
+                      style={{ fontFamily: 'var(--font-display)' }}
+                    >
+                      {step.title}
+                    </h3>
+                    <p className="text-charcoal-600">{step.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Benefits */}
+        <section className="py-16 md:py-20 bg-white">
+          <div className="container-custom">
+            <div className="text-center mb-12">
+              <h2
+                className="text-3xl md:text-4xl text-charcoal-900 mb-4"
+                style={{ fontFamily: 'var(--font-display)' }}
+              >
+                Benefits of Professional Floor Leveling
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              {[
+                { title: 'Prevents Flooring Failure', desc: 'Level subfloors prevent cracked tiles, squeaky hardwood, wrinkled vinyl, and premature flooring wear.' },
+                { title: 'Increases Property Value', desc: 'Level floors are a key selling point. Addressing floor issues now prevents deal-breakers during home inspections.' },
+                { title: 'Improves Safety', desc: 'Uneven floors create trip hazards. Level floors improve accessibility and reduce injury risk.' },
+                { title: 'Enhances Aesthetics', desc: 'Flooring looks better on level surfaces. Tile patterns align properly, hardwood planks lay flat.' },
+                { title: 'Long-Term Cost Savings', desc: 'Investing in proper leveling now saves thousands in future repairs and flooring replacement.' },
+                { title: 'Enables Quality Installation', desc: 'Professional flooring installers require level surfaces to do their best work.' }
+              ].map((benefit) => (
+                <div key={benefit.title} className="bg-cream-50 rounded-2xl p-6 border border-cream-200">
+                  <div className="w-10 h-10 bg-forest-100 rounded-lg flex items-center justify-center mb-4">
+                    <CheckCircle className="text-forest-600" size={20} />
+                  </div>
+                  <h3 className="text-lg font-semibold text-charcoal-900 mb-2">{benefit.title}</h3>
+                  <p className="text-charcoal-600 text-sm">{benefit.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQs */}
+        <section className="py-16 md:py-20 bg-cream-50">
+          <div className="container-custom">
+            <div className="text-center mb-12">
+              <h2
+                className="text-3xl md:text-4xl text-charcoal-900 mb-4"
+                style={{ fontFamily: 'var(--font-display)' }}
+              >
+                Common Questions About Floor Leveling
+              </h2>
+            </div>
+
+            <div className="max-w-3xl mx-auto space-y-4">
+              {faqs.map((faq, i) => (
+                <details
+                  key={i}
+                  className="group bg-white rounded-xl border border-cream-200 overflow-hidden"
+                >
+                  <summary className="flex items-center justify-between p-6 cursor-pointer">
+                    <span className="font-semibold text-charcoal-900 pr-4">{faq.q}</span>
+                    <ChevronDown size={20} className="text-charcoal-400 group-open:rotate-180 transition-transform flex-shrink-0" />
+                  </summary>
+                  <div className="px-6 pb-6 pt-0">
+                    <p className="text-charcoal-600">{faq.a}</p>
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Service Areas */}
+        <section className="py-16 md:py-20 bg-white">
+          <div className="container-custom">
+            <div className="text-center mb-10">
+              <h2
+                className="text-3xl md:text-4xl text-charcoal-900 mb-4"
+                style={{ fontFamily: 'var(--font-display)' }}
+              >
+                Floor Leveling Across Greater Vancouver
+              </h2>
+              <p className="text-charcoal-600 max-w-2xl mx-auto">
+                We provide professional floor leveling services throughout the Lower Mainland
+              </p>
+            </div>
+
+            <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+              {serviceAreas.map((city) => (
+                <Link
+                  key={city}
+                  href={`/service-areas/${city.toLowerCase().replace(' ', '-')}`}
+                  className="px-4 py-2 bg-cream-50 rounded-full border border-cream-200 text-charcoal-700 hover:bg-forest-50 hover:border-forest-200 hover:text-forest-700 transition-all text-sm font-medium"
+                >
+                  {city}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="relative py-20 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-forest-700 to-forest-800" />
+          <div
+            className="absolute inset-0 opacity-10"
+            style={{
+              backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255,255,255,0.1) 20px, rgba(255,255,255,0.1) 40px)`
+            }}
+          />
+
+          <div className="container-custom relative z-10 text-center">
+            <h2
+              className="text-3xl md:text-4xl text-white mb-4"
+              style={{ fontFamily: 'var(--font-display)' }}
+            >
+              Ready to Level Your Floors?
+            </h2>
+            <p className="text-xl text-forest-100 mb-8 max-w-2xl mx-auto">
+              Get a free consultation and quote with our industry-leading 5-year warranty
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/quote" className="btn-primary text-center">
-                Get Free Quote
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/quote" className="btn-white btn-lg">
+                Request Free Quote
+                <ArrowRight size={18} />
               </Link>
-              <a href="tel:+16043536077" className="btn-secondary text-center">
-                <Phone className="inline mr-2" size={20} />
+              <a href="tel:+16043536077" className="btn-ghost btn-lg">
+                <Phone size={18} />
                 Call (604) 353-6077
               </a>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Introduction */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="mb-6">What is Floor Leveling?</h2>
-            <p className="text-lg text-gray-700 mb-4">
-              Floor leveling is the critical process of correcting uneven, sloped, or damaged subfloors to create a perfectly flat surface for your finished flooring. Whether you're installing hardwood, tile, laminate, or any other flooring material, a level subfloor is essential for proper installation, longevity, and performance.
-            </p>
-            <p className="text-lg text-gray-700 mb-4">
-              Uneven floors aren't just an aesthetic issue—they cause serious problems. Tiles crack, hardwood buckles and squeaks, vinyl develops wrinkles, and doors refuse to close properly. Foundation settlement, water damage, age-related deterioration, and poor original construction all contribute to floor irregularities that worsen over time.
-            </p>
-            <p className="text-lg text-gray-700 mb-4">
-              At PROMARK FLOORING, we've spent over 20 years perfecting the art and science of floor leveling. Using state-of-the-art self-leveling compounds, precision concrete grinding, and expert subfloor repair techniques, we correct everything from minor dips to severe slopes. Our work creates the solid, level foundation your new flooring needs to look beautiful and last for decades.
-            </p>
-            <p className="text-lg text-gray-700">
-              Serving residential homes, condos, townhomes, and commercial properties across Greater Vancouver and the Fraser Valley, we bring local expertise and proven results to every floor leveling project. Our industry-leading 5-year warranty demonstrates our confidence in delivering lasting solutions.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose PROMARK for Floor Leveling */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <h2 className="text-center mb-12">Why Choose PROMARK for Floor Leveling?</h2>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="bg-white p-8 rounded-lg shadow-sm">
-              <Shield className="text-primary-red mb-4" size={48} />
-              <h3 className="text-2xl font-bold mb-4">Industry-Leading 5-Year Warranty</h3>
-              <p className="text-gray-700">
-                We stand behind our floor leveling work with an exceptional 5-year warranty—one of the best in the industry. This comprehensive warranty covers both workmanship and materials, giving you complete peace of mind. If you experience any issues with our leveling work within 5 years, we'll make it right at no additional cost. Our warranty reflects our confidence in using premium materials, proven techniques, and meticulous quality control.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-lg shadow-sm">
-              <Award className="text-primary-red mb-4" size={48} />
-              <h3 className="text-2xl font-bold mb-4">20+ Years of Expertise</h3>
-              <p className="text-gray-700">
-                Since our founding, we've leveled thousands of floors across Greater Vancouver. This extensive experience means we've encountered every type of floor problem—from simple dips to complex foundation issues. We know which techniques and materials work best for each situation, whether it's a concrete slab, wood subfloor, or damaged structural floor. Our expertise saves you time, money, and future headaches.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-lg shadow-sm">
-              <CheckCircle className="text-primary-red mb-4" size={48} />
-              <h3 className="text-2xl font-bold mb-4">Premium Materials & Techniques</h3>
-              <p className="text-gray-700">
-                We use only professional-grade self-leveling compounds, moisture barriers, and reinforcement materials from trusted manufacturers. Our technicians are trained in advanced leveling techniques including self-leveling overlays, concrete grinding, structural repairs, and moisture mitigation. We assess each project individually to determine the optimal approach for your specific floor conditions and requirements.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-lg shadow-sm">
-              <Clock className="text-primary-red mb-4" size={48} />
-              <h3 className="text-2xl font-bold mb-4">Efficient & Professional Process</h3>
-              <p className="text-gray-700">
-                We respect your time and property. Most residential floor leveling projects are completed in 1-3 days, with the leveling compound curing within 24-48 hours. We protect your home, work cleanly, and communicate clearly throughout the process. You'll know exactly what to expect, when we'll be working, and when your new flooring installation can begin. Our goal is a smooth, stress-free experience.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Floor Leveling Process */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <h2 className="text-center mb-12">Our Floor Leveling Process</h2>
-
-          <div className="max-w-4xl mx-auto space-y-8">
-            <div className="flex gap-6">
-              <div className="flex-shrink-0 w-12 h-12 bg-primary-red text-white rounded-full flex items-center justify-center font-bold text-xl">
-                1
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold mb-3">Initial Assessment & Consultation</h3>
-                <p className="text-gray-700">
-                  We begin with a thorough on-site inspection of your floors. Using precision laser levels and moisture meters, we measure the extent of unevenness, identify problem areas, and assess subfloor condition. We check for moisture issues, structural damage, and other factors that could affect the leveling process. You'll receive a detailed explanation of what we find, our recommended solution, and a transparent written quote.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-6">
-              <div className="flex-shrink-0 w-12 h-12 bg-primary-red text-white rounded-full flex items-center justify-center font-bold text-xl">
-                2
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold mb-3">Surface Preparation</h3>
-                <p className="text-gray-700">
-                  Proper preparation is critical for lasting results. We remove existing flooring if necessary, then clean and prepare the subfloor surface. This includes removing debris, grinding down high spots, repairing cracks or damage, and addressing any structural issues. For concrete floors, we may grind or shot blast the surface to ensure proper adhesion. Wood subfloors are reinforced and repaired as needed. We also install moisture barriers when required to prevent future problems.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-6">
-              <div className="flex-shrink-0 w-12 h-12 bg-primary-red text-white rounded-full flex items-center justify-center font-bold text-xl">
-                3
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold mb-3">Primer Application</h3>
-                <p className="text-gray-700">
-                  We apply a professional bonding primer to the prepared surface. This crucial step ensures the self-leveling compound adheres properly and performs as designed. The primer also helps control absorption rates and prevents air bubbles from forming during the pour.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-6">
-              <div className="flex-shrink-0 w-12 h-12 bg-primary-red text-white rounded-full flex items-center justify-center font-bold text-xl">
-                4
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold mb-3">Leveling Compound Application</h3>
-                <p className="text-gray-700">
-                  Using premium self-leveling compounds mixed to exact specifications, we pour and spread the material across your floor. The compound naturally seeks its own level, filling low spots and creating a perfectly flat surface. Our technicians use specialized tools to guide the flow, ensure even coverage, and achieve the precise thickness needed. For larger areas or severe unevenness, we may apply multiple layers.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-6">
-              <div className="flex-shrink-0 w-12 h-12 bg-primary-red text-white rounded-full flex items-center justify-center font-bold text-xl">
-                5
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold mb-3">Curing & Quality Control</h3>
-                <p className="text-gray-700">
-                  The leveling compound typically cures within 24-48 hours, though we may recommend longer cure times for specific products or conditions. During this period, we protect the surface and monitor the curing process. Once cured, we perform final laser level measurements to verify the floor meets our strict flatness standards and your project requirements.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-6">
-              <div className="flex-shrink-0 w-12 h-12 bg-primary-red text-white rounded-full flex items-center justify-center font-bold text-xl">
-                6
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold mb-3">Final Inspection & Handoff</h3>
-                <p className="text-gray-700">
-                  We conduct a comprehensive final inspection with you, demonstrating the level surface and answering any questions. You'll receive documentation of the work completed, warranty information, and guidance on next steps for your flooring installation. The floor is now ready for tile, hardwood, vinyl, or any other flooring material you've chosen.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Before & After Gallery Placeholder */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <h2 className="text-center mb-12">Floor Leveling Transformations</h2>
-          {/* TODO: Add before/after images from /assets after image analysis */}
-          <div className="bg-white p-12 rounded-lg text-center">
-            <p className="text-gray-600 mb-4">Before & After gallery will be displayed here once images are provided</p>
-            <p className="text-sm text-gray-500">Images showing floor leveling projects from uneven to perfectly level</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <h2 className="text-center mb-12">Benefits of Professional Floor Leveling</h2>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="text-center">
-              <CheckCircle className="text-primary-red mx-auto mb-4" size={48} />
-              <h3 className="text-xl font-bold mb-3">Prevents Flooring Failure</h3>
-              <p className="text-gray-700">
-                Level subfloors prevent cracked tiles, squeaky hardwood, wrinkled vinyl, and premature flooring wear. Your investment in new flooring is protected when installed on a properly leveled surface.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <CheckCircle className="text-primary-red mx-auto mb-4" size={48} />
-              <h3 className="text-xl font-bold mb-3">Increases Property Value</h3>
-              <p className="text-gray-700">
-                Level floors are a key selling point. Addressing floor issues now prevents them from becoming deal-breakers during home inspections and adds value to your property.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <CheckCircle className="text-primary-red mx-auto mb-4" size={48} />
-              <h3 className="text-xl font-bold mb-3">Improves Safety</h3>
-              <p className="text-gray-700">
-                Uneven floors create trip hazards, especially for children and elderly family members. Level floors improve accessibility and reduce injury risk throughout your home or business.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <CheckCircle className="text-primary-red mx-auto mb-4" size={48} />
-              <h3 className="text-xl font-bold mb-3">Enhances Aesthetics</h3>
-              <p className="text-gray-700">
-                Flooring looks better on level surfaces. Tile patterns align properly, hardwood planks lay flat, and the overall appearance is professional and polished.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <CheckCircle className="text-primary-red mx-auto mb-4" size={48} />
-              <h3 className="text-xl font-bold mb-3">Long-Term Cost Savings</h3>
-              <p className="text-gray-700">
-                Investing in proper floor leveling now saves thousands in future repairs. It's far less expensive than replacing failed flooring or dealing with structural issues down the line.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <CheckCircle className="text-primary-red mx-auto mb-4" size={48} />
-              <h3 className="text-xl font-bold mb-3">Enables Quality Installation</h3>
-              <p className="text-gray-700">
-                Professional flooring installers require level surfaces to do their best work. A leveled floor ensures your new flooring is installed correctly and performs as designed.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Common Questions */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <h2 className="text-center mb-12">Common Questions About Floor Leveling</h2>
-
-          <div className="max-w-3xl mx-auto space-y-6">
-            <details className="bg-white p-6 rounded-lg shadow-sm">
-              <summary className="font-semibold text-lg cursor-pointer">How do I know if my floor needs leveling?</summary>
-              <p className="mt-4 text-gray-700">
-                Signs include visible slopes or dips, balls or marbles rolling across the floor, gaps under furniture, cracked tiles, squeaky or bouncy hardwood, doors that won't close properly, and visible cracks in the subfloor. If you're planning to install new flooring, a level subfloor is essential regardless of visible issues.
-              </p>
-            </details>
-
-            <details className="bg-white p-6 rounded-lg shadow-sm">
-              <summary className="font-semibold text-lg cursor-pointer">How long does the floor leveling process take?</summary>
-              <p className="mt-4 text-gray-700">
-                Most residential projects take 1-3 days from start to finish. The actual pour takes just a few hours, but proper preparation and curing time are essential. The self-leveling compound typically cures enough for foot traffic within 24 hours and is ready for flooring installation within 24-48 hours, though specific cure times depend on the product and conditions.
-              </p>
-            </details>
-
-            <details className="bg-white p-6 rounded-lg shadow-sm">
-              <summary className="font-semibold text-lg cursor-pointer">Can you level floors in occupied homes or businesses?</summary>
-              <p className="mt-4 text-gray-700">
-                Yes. While the work area must be cleared and inaccessible during the pour and initial curing (usually 24 hours), we can work in phases to minimize disruption. For businesses, we often schedule work during off-hours or weekends. We protect surrounding areas and work cleanly to minimize impact on your daily operations.
-              </p>
-            </details>
-
-            <details className="bg-white p-6 rounded-lg shadow-sm">
-              <summary className="font-semibold text-lg cursor-pointer">What types of subfloors can be leveled?</summary>
-              <p className="mt-4 text-gray-700">
-                We level concrete slabs, wood subfloors, existing tile floors (when appropriate), and various other substrates. Each material requires different preparation and leveling techniques. During our assessment, we'll determine the best approach for your specific subfloor type and condition.
-              </p>
-            </details>
-
-            <details className="bg-white p-6 rounded-lg shadow-sm">
-              <summary className="font-semibold text-lg cursor-pointer">Will floor leveling raise the floor height significantly?</summary>
-              <p className="mt-4 text-gray-700">
-                The height increase depends on how much leveling is needed. For minor corrections, we may add only 1/8" to 1/4". More significant unevenness may require 1/2" to 1" or more in low areas. We'll measure your floor and discuss any height change implications during our consultation, including how it affects door clearances, transitions, and appliances.
-              </p>
-            </details>
-
-            <details className="bg-white p-6 rounded-lg shadow-sm">
-              <summary className="font-semibold text-lg cursor-pointer">Do you handle moisture issues before leveling?</summary>
-              <p className="mt-4 text-gray-700">
-                Absolutely. Moisture testing is a critical part of our assessment. If we detect moisture issues, we'll identify the source and recommend solutions before leveling. This might include moisture barriers, sealers, or addressing external water sources. Proper moisture management is essential for lasting results and is included in our warranty.
-              </p>
-            </details>
-          </div>
-        </div>
-      </section>
-
-      {/* Service Areas */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <h2 className="text-center mb-12">Floor Leveling Services Across Greater Vancouver</h2>
-          <p className="text-center text-lg text-gray-600 mb-8">
-            We provide professional floor leveling services throughout the Lower Mainland
-          </p>
-
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-4xl mx-auto">
-            {serviceAreas.map((city) => (
-              <Link
-                key={city}
-                href={`/service-areas/${city.toLowerCase().replace(' ', '-')}`}
-                className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-red hover:text-white transition-colors"
+        {/* Related Services */}
+        <section className="py-16 md:py-20 bg-cream-50">
+          <div className="container-custom">
+            <div className="text-center mb-12">
+              <h2
+                className="text-3xl text-charcoal-900 mb-4"
+                style={{ fontFamily: 'var(--font-display)' }}
               >
-                {city}
+                Related Services
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              <Link
+                href="/services/hardwood-installation"
+                className="group bg-white rounded-2xl p-6 border border-cream-200 hover:border-forest-200 hover:shadow-lg transition-all"
+              >
+                <h3
+                  className="text-lg text-charcoal-900 mb-2 group-hover:text-forest-700 transition-colors"
+                  style={{ fontFamily: 'var(--font-display)' }}
+                >
+                  Hardwood Installation
+                </h3>
+                <p className="text-charcoal-600 text-sm mb-4">
+                  Professional hardwood flooring installation on your newly leveled floors
+                </p>
+                <span className="inline-flex items-center gap-1 text-forest-600 font-medium text-sm">
+                  Learn More <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                </span>
               </Link>
-            ))}
+
+              <Link
+                href="/services/repair-maintenance"
+                className="group bg-white rounded-2xl p-6 border border-cream-200 hover:border-forest-200 hover:shadow-lg transition-all"
+              >
+                <h3
+                  className="text-lg text-charcoal-900 mb-2 group-hover:text-forest-700 transition-colors"
+                  style={{ fontFamily: 'var(--font-display)' }}
+                >
+                  Floor Repair
+                </h3>
+                <p className="text-charcoal-600 text-sm mb-4">
+                  Subfloor repairs and structural corrections
+                </p>
+                <span className="inline-flex items-center gap-1 text-forest-600 font-medium text-sm">
+                  Learn More <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                </span>
+              </Link>
+
+              <Link
+                href="/industries/commercial"
+                className="group bg-white rounded-2xl p-6 border border-cream-200 hover:border-forest-200 hover:shadow-lg transition-all"
+              >
+                <h3
+                  className="text-lg text-charcoal-900 mb-2 group-hover:text-forest-700 transition-colors"
+                  style={{ fontFamily: 'var(--font-display)' }}
+                >
+                  Commercial Leveling
+                </h3>
+                <p className="text-charcoal-600 text-sm mb-4">
+                  Large-scale floor leveling for commercial properties
+                </p>
+                <span className="inline-flex items-center gap-1 text-forest-600 font-medium text-sm">
+                  Learn More <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                </span>
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="section-padding bg-primary-red text-white">
-        <div className="container-custom text-center">
-          <h2 className="text-white mb-4">Ready to Level Your Floors?</h2>
-          <p className="text-xl mb-8 text-gray-100">
-            Get a free consultation and quote with our 5-year warranty
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/quote" className="bg-white text-primary-red px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block">
-              Request Free Quote
-            </Link>
-            <a href="tel:+16043536077" className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary-red transition-colors inline-block">
-              Call (604) 353-6077
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Related Services */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <h2 className="text-center mb-12">Related Services</h2>
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <Link href="/services/hardwood-installation" className="card text-center hover:shadow-xl transition-shadow">
-              <h3 className="text-xl font-bold mb-2">Hardwood Installation</h3>
-              <p className="text-gray-600 mb-4">Professional hardwood flooring installation on your newly leveled floors</p>
-              <span className="text-primary-red font-semibold inline-flex items-center">
-                Learn More <ArrowRight className="ml-2" size={18} />
-              </span>
-            </Link>
-
-            <Link href="/services/repair-maintenance" className="card text-center hover:shadow-xl transition-shadow">
-              <h3 className="text-xl font-bold mb-2">Floor Repair</h3>
-              <p className="text-gray-600 mb-4">Subfloor repairs and structural corrections</p>
-              <span className="text-primary-red font-semibold inline-flex items-center">
-                Learn More <ArrowRight className="ml-2" size={18} />
-              </span>
-            </Link>
-
-            <Link href="/industries/commercial" className="card text-center hover:shadow-xl transition-shadow">
-              <h3 className="text-xl font-bold mb-2">Commercial Leveling</h3>
-              <p className="text-gray-600 mb-4">Large-scale floor leveling for commercial properties</p>
-              <span className="text-primary-red font-semibold inline-flex items-center">
-                Learn More <ArrowRight className="ml-2" size={18} />
-              </span>
-            </Link>
-          </div>
-        </div>
-      </section>
+        </section>
+      </main>
     </>
   )
 }
