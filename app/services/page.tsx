@@ -14,7 +14,7 @@ const services = [
     icon: Layers,
     href: '/services/floor-leveling',
     warranty: '5-Year Warranty',
-    image: '/images/floor-leveling.jpg',
+    image: '/assets/PROMARK-FLOORING-floor-leveling-Vancouver-13.jpg',
     features: ['Self-leveling compounds', 'Concrete grinding', 'Moisture testing', 'Subfloor correction'],
     highlight: true
   },
@@ -24,7 +24,7 @@ const services = [
     icon: Grid3X3,
     href: '/services/hardwood-installation',
     warranty: '1-Year Warranty',
-    image: '/images/hardwood-install.jpg',
+    image: '/assets/PROMARK-FLOORING-hardwood-flooring-installation-Vancouver-10.jpg',
     features: ['Solid hardwood', 'Engineered wood', 'Laminate options', 'Custom finishes'],
     highlight: false
   },
@@ -34,7 +34,7 @@ const services = [
     icon: TrendingUp,
     href: '/services/stairs',
     warranty: 'Quality Guaranteed',
-    image: '/images/stairs.jpg',
+    image: '/assets/PROMARK-FLOORING-stairs-11.jpg',
     features: ['Custom treads', 'Nosing installation', 'Refinishing', 'Safety upgrades'],
     highlight: false
   },
@@ -44,7 +44,7 @@ const services = [
     icon: Wrench,
     href: '/services/repair-maintenance',
     warranty: 'Satisfaction Guaranteed',
-    image: '/images/repair.jpg',
+    image: '/assets/PROMARK-FLOORING-hardwood-flooring-13.jpg',
     features: ['Scratch repair', 'Water damage', 'Refinishing', 'Deep cleaning'],
     highlight: false
   }
@@ -57,11 +57,12 @@ export default function ServicesPage() {
       <section className="relative bg-charcoal-900 py-20 md:py-28 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/hero-services.jpg"
+            src="/assets/PROMARK-FLOORING-hardwood-flooring-installation-Vancouver-2.jpg"
             alt="Professional flooring services"
             fill
             className="object-cover opacity-30"
             priority
+            unoptimized
           />
           <div className="absolute inset-0 bg-gradient-to-r from-charcoal-900 via-charcoal-900/95 to-charcoal-900/80" />
         </div>
@@ -146,6 +147,7 @@ export default function ServicesPage() {
                     alt={service.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    unoptimized
                   />
                   {/* Warranty Badge */}
                   <div className={`absolute top-4 left-4 z-20 px-3 py-1.5 rounded-full text-xs font-semibold ${
@@ -253,38 +255,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-forest-700 to-forest-800" />
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255,255,255,0.1) 20px, rgba(255,255,255,0.1) 40px)`
-          }}
-        />
-
-        <div className="container-custom relative z-10 text-center">
-          <h2
-            className="text-3xl md:text-4xl text-white mb-4"
-            style={{ fontFamily: 'var(--font-display)' }}
-          >
-            Ready to Get Started?
-          </h2>
-          <p className="text-xl text-forest-100 mb-8 max-w-2xl mx-auto">
-            Contact us today for a free consultation and quote. Let's transform your floors together.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/quote" className="btn-white btn-lg">
-              Get Free Quote
-              <ArrowRight size={18} />
-            </Link>
-            <a href="tel:+16043536077" className="btn-ghost btn-lg">
-              <Phone size={18} />
-              Call (604) 353-6077
-            </a>
-          </div>
-        </div>
-      </section>
     </main>
   )
 }

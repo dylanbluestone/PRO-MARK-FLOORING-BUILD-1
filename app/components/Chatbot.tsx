@@ -178,7 +178,7 @@ export default function Chatbot() {
         style={{ maxHeight: 'calc(100vh - 80px)' }}
       >
         {/* Header */}
-        <div className="bg-gradient-to-r from-charcoal-800 to-charcoal-900 text-white p-5 flex-shrink-0">
+        <div className="bg-gradient-to-r from-charcoal-800 to-charcoal-900 text-white p-5 flex-shrink-0 rounded-t-2xl sm:rounded-t-3xl">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               {/* Logo Badge */}

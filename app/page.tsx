@@ -47,7 +47,7 @@ const services = [
   {
     title: 'Hardwood Installation',
     description: 'Premium hardwood, engineered wood, and laminate flooring installed with meticulous attention to detail by our master craftsmen.',
-    image: '/assets/PROMARK-FLOORING-hardwood-flooring-installation-Vancouver-7.jpg',
+    image: '/assets/PROMARK-FLOORING-hardwood-flooring-installation-Vancouver-11.jpg',
     href: '/services/hardwood-installation',
     icon: Grid3X3,
     badge: 'Premium Materials',
@@ -135,6 +135,7 @@ export default function HomePage() {
             className="object-cover"
             priority
             sizes="100vw"
+            unoptimized
           />
           {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-charcoal-950/90 via-charcoal-900/75 to-charcoal-900/50" />
@@ -291,6 +292,7 @@ export default function HomePage() {
                   width={600}
                   height={450}
                   className="w-full h-auto object-cover"
+                  unoptimized
                 />
               </div>
 
@@ -508,6 +510,7 @@ export default function HomePage() {
                   alt={`PROMARK FLOORING project ${index + 1}`}
                   fill
                   className="object-cover img-zoom"
+                  unoptimized
                 />
                 <div className="absolute inset-0 bg-forest-900/0 group-hover:bg-forest-900/40 transition-colors duration-300" />
               </div>
@@ -545,7 +548,7 @@ export default function HomePage() {
           </div>
 
           {/* Service Areas Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 mb-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 sm:gap-4 mb-8">
             {serviceAreas.map((city) => (
               <Link
                 key={city}
