@@ -141,8 +141,8 @@ export default function Chatbot() {
       <button
         onClick={() => setIsOpen(true)}
         className={`
-          fixed bottom-6 right-6 z-50
-          w-16 h-16 rounded-full
+          fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50
+          w-14 h-14 sm:w-16 sm:h-16 rounded-full
           bg-gradient-to-br from-forest-600 to-forest-700
           text-white shadow-2xl
           hover:shadow-forest-600/40 hover:scale-105
@@ -165,9 +165,9 @@ export default function Chatbot() {
 
       {/* Chat Window */}
       <div className={`
-        fixed bottom-6 right-6 z-50
-        w-[400px] max-w-[calc(100vw-32px)]
-        bg-white rounded-3xl shadow-2xl
+        fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50
+        w-[calc(100vw-32px)] sm:w-[400px] max-w-[400px]
+        bg-white rounded-2xl sm:rounded-3xl shadow-2xl
         transition-all duration-300 origin-bottom-right
         flex flex-col overflow-hidden
         ${isOpen
@@ -175,7 +175,7 @@ export default function Chatbot() {
           : 'scale-90 opacity-0 invisible pointer-events-none'
         }
       `}
-        style={{ maxHeight: 'calc(100vh - 100px)' }}
+        style={{ maxHeight: 'calc(100vh - 80px)' }}
       >
         {/* Header */}
         <div className="bg-gradient-to-r from-charcoal-800 to-charcoal-900 text-white p-5 flex-shrink-0">
@@ -193,12 +193,12 @@ export default function Chatbot() {
 
               <div>
                 <h3
-                  className="font-semibold text-base leading-tight"
+                  className="font-semibold text-base leading-tight text-white"
                   style={{ fontFamily: 'var(--font-display)' }}
                 >
                   PROMARK FLOORING
                 </h3>
-                <div className="flex items-center gap-1.5 text-xs text-forest-300 mt-0.5">
+                <div className="flex items-center gap-1.5 text-xs text-white/80 mt-0.5">
                   <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
                   Online • Ready to help
                 </div>

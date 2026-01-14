@@ -1,7 +1,6 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { Metadata } from 'next'
-import { Shield, CheckCircle, ArrowRight, Phone, Award, Star, ChevronDown, Grid3X3 } from 'lucide-react'
+import { Shield, CheckCircle, ArrowRight, Phone, ChevronDown } from 'lucide-react'
 import { ServiceSchema } from '@/lib/schema-markup'
 
 export const metadata: Metadata = {
@@ -59,72 +58,29 @@ export default function HardwoodInstallationPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       <main>
-        {/* Hero Section */}
-        <section className="relative bg-charcoal-900 py-20 md:py-28 overflow-hidden">
-          <div className="absolute inset-0">
-            <Image
-              src="/images/hero-hardwood.jpg"
-              alt="Beautiful hardwood flooring"
-              fill
-              className="object-cover opacity-30"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-charcoal-900 via-charcoal-900/95 to-charcoal-900/80" />
-          </div>
-
-          <div className="container-custom relative z-10">
-            <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 bg-copper-500/20 border border-copper-400/30 rounded-full px-4 py-2 mb-6">
-                <Grid3X3 size={16} className="text-copper-400" />
-                <span className="text-copper-300 text-sm font-medium">Expert Hardwood Craftsmen</span>
+        {/* Compact Hero Section */}
+        <section className="bg-forest-700 py-8">
+          <div className="container-custom">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+              <div>
+                <h1
+                  className="text-2xl md:text-3xl text-white font-bold"
+                  style={{ fontFamily: 'var(--font-display)' }}
+                >
+                  Hardwood Flooring Installation
+                </h1>
+                <p className="text-forest-200 mt-1">
+                  1-year warranty • Serving Greater Vancouver
+                </p>
               </div>
-
-              <h1
-                className="text-4xl md:text-5xl lg:text-6xl text-cream-50 mb-6"
-                style={{ fontFamily: 'var(--font-display)' }}
-              >
-                Hardwood Flooring
-                <span className="text-copper-400 block mt-2">Installation</span>
-              </h1>
-
-              <p className="text-lg md:text-xl text-charcoal-300 max-w-2xl mb-8">
-                Transform your space with timeless hardwood flooring. Expert installation,
-                premium materials, 1-year warranty. Serving Greater Vancouver.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/quote" className="btn-primary btn-lg">
+              <div className="flex gap-3">
+                <Link href="/quote" className="btn-white">
                   Get Free Quote
-                  <ArrowRight size={18} />
                 </Link>
-                <a href="tel:+16043536077" className="btn-secondary btn-lg">
-                  <Phone size={18} />
+                <a href="tel:+16043536077" className="btn-ghost">
+                  <Phone size={16} />
                   (604) 353-6077
                 </a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Trust Bar */}
-        <section className="bg-charcoal-800 py-5 border-y border-charcoal-700">
-          <div className="container-custom">
-            <div className="flex flex-wrap justify-center gap-6 md:gap-12">
-              <div className="flex items-center gap-2 text-cream-200">
-                <Shield className="text-copper-400" size={18} />
-                <span className="text-sm font-medium">1-Year Warranty</span>
-              </div>
-              <div className="flex items-center gap-2 text-cream-200">
-                <Award className="text-forest-400" size={18} />
-                <span className="text-sm font-medium">20+ Years Experience</span>
-              </div>
-              <div className="flex items-center gap-2 text-cream-200">
-                <Star className="text-copper-400" size={18} />
-                <span className="text-sm font-medium">Premium Materials</span>
-              </div>
-              <div className="flex items-center gap-2 text-cream-200">
-                <CheckCircle className="text-forest-400" size={18} />
-                <span className="text-sm font-medium">Free Consultations</span>
               </div>
             </div>
           </div>

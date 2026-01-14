@@ -1,6 +1,5 @@
 import QuoteForm from '@/app/components/QuoteForm'
-import { Shield, Clock, Award, CheckCircle, Phone, Star, Users } from 'lucide-react'
-import Image from 'next/image'
+import { Shield, Award, Phone, Star, Users } from 'lucide-react'
 
 export const metadata = {
   title: 'Get a Free Quote | PROMARK FLOORING - Vancouver Floor Specialists',
@@ -10,89 +9,38 @@ export const metadata = {
 export default function QuotePage() {
   return (
     <main>
-      {/* Hero Section */}
-      <section className="relative bg-charcoal-900 py-20 md:py-28 overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <Image
-            src="/images/hero-hardwood.jpg"
-            alt="Premium hardwood flooring"
-            fill
-            className="object-cover opacity-30"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-charcoal-900 via-charcoal-900/95 to-charcoal-900/80" />
-        </div>
-
-        {/* Content */}
-        <div className="container-custom relative z-10">
-          <div className="max-w-3xl">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-forest-600/20 border border-forest-500/30 rounded-full px-4 py-2 mb-6">
-              <CheckCircle size={16} className="text-forest-400" />
-              <span className="text-forest-300 text-sm font-medium">100% Free, No-Obligation Quote</span>
+      {/* Compact Header */}
+      <section className="bg-forest-700 py-8">
+        <div className="container-custom">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div>
+              <h1
+                className="text-2xl md:text-3xl text-white font-bold"
+                style={{ fontFamily: 'var(--font-display)' }}
+              >
+                Get Your Free Quote
+              </h1>
+              <p className="text-forest-200 mt-1">
+                100% free, no-obligation estimate within 24 hours
+              </p>
             </div>
-
-            <h1
-              className="text-4xl md:text-5xl lg:text-6xl text-cream-50 mb-6"
-              style={{ fontFamily: 'var(--font-display)' }}
-            >
-              Get Your Free
-              <span className="text-copper-400 block mt-2">Flooring Quote</span>
-            </h1>
-
-            <p className="text-lg md:text-xl text-charcoal-300 max-w-2xl mb-8">
-              Tell us about your project and receive a detailed, personalized estimate from
-              Mark Biernacki within 24 hours. Vancouver's most trusted flooring craftsman.
-            </p>
-
-            {/* Quick Contact */}
             <a
               href="tel:+16043536077"
-              className="inline-flex items-center gap-3 text-cream-200 hover:text-copper-400 transition-colors group"
+              className="inline-flex items-center gap-2 text-white hover:text-copper-300 transition-colors"
             >
-              <div className="w-12 h-12 bg-forest-600 rounded-xl flex items-center justify-center group-hover:bg-forest-500 transition-colors">
-                <Phone size={20} className="text-white" />
-              </div>
-              <div>
-                <span className="text-sm text-charcoal-400 block">Prefer to call?</span>
-                <span className="text-lg font-semibold">(604) 353-6077</span>
-              </div>
+              <Phone size={18} />
+              <span className="font-semibold">(604) 353-6077</span>
             </a>
           </div>
         </div>
       </section>
 
-      {/* Trust Bar */}
-      <section className="bg-charcoal-800 py-5 border-y border-charcoal-700">
-        <div className="container-custom">
-          <div className="flex flex-wrap justify-center gap-6 md:gap-12">
-            <div className="flex items-center gap-2 text-cream-200">
-              <CheckCircle className="text-forest-400" size={18} />
-              <span className="text-sm font-medium">100% Free Estimate</span>
-            </div>
-            <div className="flex items-center gap-2 text-cream-200">
-              <Clock className="text-copper-400" size={18} />
-              <span className="text-sm font-medium">Response Within 24 Hours</span>
-            </div>
-            <div className="flex items-center gap-2 text-cream-200">
-              <Shield className="text-forest-400" size={18} />
-              <span className="text-sm font-medium">5-Year Warranty</span>
-            </div>
-            <div className="flex items-center gap-2 text-cream-200">
-              <Award className="text-copper-400" size={18} />
-              <span className="text-sm font-medium">20+ Years Experience</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Form Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-cream-50 to-white">
+      <section className="py-12 md:py-16 bg-cream-50">
         <div className="container-custom">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Sidebar */}
-            <div className="lg:col-span-1 order-2 lg:order-1">
+            <div className="lg:col-span-1 order-2">
               <div className="lg:sticky lg:top-32 space-y-8">
                 {/* Why Choose Us */}
                 <div className="bg-white rounded-2xl shadow-lg border border-cream-200 p-6">
@@ -185,20 +133,17 @@ export default function QuotePage() {
             </div>
 
             {/* Form */}
-            <div className="lg:col-span-2 order-1 lg:order-2">
-              <div className="bg-white rounded-3xl shadow-xl border border-cream-200 p-8 md:p-10 lg:p-12">
-                <div className="text-center mb-10">
-                  <h2
-                    className="text-2xl md:text-3xl text-charcoal-900 mb-3"
-                    style={{ fontFamily: 'var(--font-display)' }}
-                  >
-                    Tell Us About Your Project
-                  </h2>
-                  <p className="text-charcoal-600 max-w-xl mx-auto">
-                    Fill out the form below with as much detail as possible. The more information
-                    you provide, the more accurate your personalized quote will be.
-                  </p>
-                </div>
+            <div className="lg:col-span-2 order-1">
+              <div className="bg-white rounded-2xl shadow-lg border border-cream-200 p-6 md:p-8">
+                <h2
+                  className="text-xl md:text-2xl text-charcoal-900 mb-2 font-bold"
+                  style={{ fontFamily: 'var(--font-display)' }}
+                >
+                  Tell Us About Your Project
+                </h2>
+                <p className="text-charcoal-600 mb-6 text-sm">
+                  The more details you provide, the more accurate your quote will be.
+                </p>
                 <QuoteForm />
               </div>
             </div>

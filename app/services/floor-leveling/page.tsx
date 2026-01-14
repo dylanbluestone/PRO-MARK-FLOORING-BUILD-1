@@ -1,7 +1,6 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { Metadata } from 'next'
-import { Shield, CheckCircle, ArrowRight, Phone, Clock, Award, Star, Users, ChevronDown } from 'lucide-react'
+import { Shield, CheckCircle, ArrowRight, Phone, Clock, ChevronDown, Award } from 'lucide-react'
 import { ServiceSchema } from '@/lib/schema-markup'
 
 export const metadata: Metadata = {
@@ -87,73 +86,29 @@ export default function FloorLevelingPage() {
       />
 
       <main>
-        {/* Hero Section */}
-        <section className="relative bg-charcoal-900 py-20 md:py-28 overflow-hidden">
-          <div className="absolute inset-0">
-            <Image
-              src="/images/hero-leveling.jpg"
-              alt="Floor leveling in progress"
-              fill
-              className="object-cover opacity-30"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-charcoal-900 via-charcoal-900/95 to-charcoal-900/80" />
-          </div>
-
-          <div className="container-custom relative z-10">
-            <div className="max-w-3xl">
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 bg-forest-600/20 border border-forest-500/30 rounded-full px-4 py-2 mb-6">
-                <Shield size={16} className="text-forest-400" />
-                <span className="text-forest-300 text-sm font-medium">Industry-Leading 5-Year Warranty</span>
+        {/* Compact Hero Section */}
+        <section className="bg-forest-700 py-8">
+          <div className="container-custom">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+              <div>
+                <h1
+                  className="text-2xl md:text-3xl text-white font-bold"
+                  style={{ fontFamily: 'var(--font-display)' }}
+                >
+                  Professional Floor Leveling
+                </h1>
+                <p className="text-forest-200 mt-1">
+                  5-year warranty • Serving Greater Vancouver
+                </p>
               </div>
-
-              <h1
-                className="text-4xl md:text-5xl lg:text-6xl text-cream-50 mb-6"
-                style={{ fontFamily: 'var(--font-display)' }}
-              >
-                Professional Floor Leveling
-                <span className="text-copper-400 block mt-2">in Vancouver</span>
-              </h1>
-
-              <p className="text-lg md:text-xl text-charcoal-300 max-w-2xl mb-8">
-                Transform uneven, damaged floors into perfectly level surfaces. Over 20 years of expertise
-                serving Greater Vancouver and the Fraser Valley.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/quote" className="btn-primary btn-lg">
+              <div className="flex gap-3">
+                <Link href="/quote" className="btn-white">
                   Get Free Quote
-                  <ArrowRight size={18} />
                 </Link>
-                <a href="tel:+16043536077" className="btn-secondary btn-lg">
-                  <Phone size={18} />
+                <a href="tel:+16043536077" className="btn-ghost">
+                  <Phone size={16} />
                   (604) 353-6077
                 </a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Trust Bar */}
-        <section className="bg-charcoal-800 py-5 border-y border-charcoal-700">
-          <div className="container-custom">
-            <div className="flex flex-wrap justify-center gap-6 md:gap-12">
-              <div className="flex items-center gap-2 text-cream-200">
-                <Shield className="text-forest-400" size={18} />
-                <span className="text-sm font-medium">5-Year Warranty</span>
-              </div>
-              <div className="flex items-center gap-2 text-cream-200">
-                <Award className="text-copper-400" size={18} />
-                <span className="text-sm font-medium">20+ Years Experience</span>
-              </div>
-              <div className="flex items-center gap-2 text-cream-200">
-                <Users className="text-forest-400" size={18} />
-                <span className="text-sm font-medium">Family-Owned & Local</span>
-              </div>
-              <div className="flex items-center gap-2 text-cream-200">
-                <Star className="text-copper-400" size={18} />
-                <span className="text-sm font-medium">5-Star Rated</span>
               </div>
             </div>
           </div>
@@ -408,34 +363,29 @@ export default function FloorLevelingPage() {
         </section>
 
         {/* CTA */}
-        <section className="relative py-20 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-forest-700 to-forest-800" />
-          <div
-            className="absolute inset-0 opacity-10"
-            style={{
-              backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255,255,255,0.1) 20px, rgba(255,255,255,0.1) 40px)`
-            }}
-          />
-
-          <div className="container-custom relative z-10 text-center">
-            <h2
-              className="text-3xl md:text-4xl text-white mb-4"
-              style={{ fontFamily: 'var(--font-display)' }}
-            >
-              Ready to Level Your Floors?
-            </h2>
-            <p className="text-xl text-forest-100 mb-8 max-w-2xl mx-auto">
-              Get a free consultation and quote with our industry-leading 5-year warranty
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/quote" className="btn-white btn-lg">
-                Request Free Quote
-                <ArrowRight size={18} />
-              </Link>
-              <a href="tel:+16043536077" className="btn-ghost btn-lg">
-                <Phone size={18} />
-                Call (604) 353-6077
-              </a>
+        <section className="py-12 bg-forest-700">
+          <div className="container-custom">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+              <div>
+                <h2
+                  className="text-xl md:text-2xl text-white font-bold"
+                  style={{ fontFamily: 'var(--font-display)' }}
+                >
+                  Ready to Level Your Floors?
+                </h2>
+                <p className="text-forest-200 mt-1">
+                  Free consultation, 5-year warranty
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link href="/quote" className="btn-white">
+                  Get Free Quote
+                </Link>
+                <a href="tel:+16043536077" className="btn-ghost">
+                  <Phone size={16} />
+                  (604) 353-6077
+                </a>
+              </div>
             </div>
           </div>
         </section>

@@ -15,9 +15,7 @@ import {
   Wrench,
   Clock,
   BadgeCheck,
-  Sparkles,
-  Quote,
-  ChevronDown
+  Sparkles
 } from 'lucide-react'
 import { LocalBusinessSchema } from '@/lib/schema-markup'
 
@@ -60,6 +58,7 @@ const services = [
     image: '/assets/PROMARK-FLOORING-stairs-11.jpg',
     href: '/services/stairs',
     icon: TrendingUp,
+    badge: 'Custom Design',
   },
   {
     title: 'Repair & Maintenance',
@@ -67,6 +66,7 @@ const services = [
     image: '/assets/PROMARK-FLOORING-hardwood-flooring-13.jpg',
     href: '/services/repair-maintenance',
     icon: Wrench,
+    badge: 'Restore & Renew',
   },
 ]
 
@@ -94,30 +94,6 @@ const processSteps = [
   },
 ]
 
-// Testimonials
-const testimonials = [
-  {
-    name: 'Michael R.',
-    role: 'Homeowner',
-    location: 'Vancouver',
-    content: 'PROMARK transformed our uneven concrete floors into a perfectly level surface. The 5-year warranty gave us total peace of mind. Exceptional craftsmanship!',
-    rating: 5,
-  },
-  {
-    name: 'Sarah L.',
-    role: 'Property Manager',
-    location: 'Burnaby',
-    content: 'We\'ve used PROMARK for multiple commercial projects. Their attention to detail and professionalism is unmatched. Highly recommend for any flooring work.',
-    rating: 5,
-  },
-  {
-    name: 'David K.',
-    role: 'Contractor',
-    location: 'North Vancouver',
-    content: 'As a contractor, I trust PROMARK for all my floor leveling needs. They\'re reliable, skilled, and their work quality is consistently excellent.',
-    rating: 5,
-  },
-]
 
 // Gallery images
 const galleryImages = [
@@ -129,10 +105,12 @@ const galleryImages = [
   '/assets/PROMARK-FLOORING-vinyl-flooring-vancouver-11.jpg',
 ]
 
-// Service areas
+// Service areas - All Greater Vancouver & Fraser Valley
 const serviceAreas = [
-  'Vancouver', 'North Vancouver', 'West Vancouver', 'Burnaby', 'Surrey',
-  'Delta', 'Langley', 'Port Coquitlam', 'Maple Ridge', 'Mission'
+  'Vancouver', 'North Vancouver', 'West Vancouver', 'Burnaby', 'Richmond',
+  'Surrey', 'Delta', 'White Rock', 'New Westminster', 'Coquitlam',
+  'Port Coquitlam', 'Port Moody', 'Langley', 'Maple Ridge', 'Pitt Meadows',
+  'Mission', 'Abbotsford', 'Chilliwack'
 ]
 
 export default function HomePage() {
@@ -189,67 +167,62 @@ export default function HomePage() {
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-12">
               <Link
                 href="/quote"
-                className="btn-primary btn-xl"
+                className="btn-primary btn-lg w-full sm:w-auto justify-center"
               >
                 Get Free Quote
-                <ArrowRight size={20} />
+                <ArrowRight size={18} />
               </Link>
               <a
                 href={contactInfo.phoneHref}
-                className="btn-ghost btn-xl"
+                className="btn-ghost btn-lg w-full sm:w-auto justify-center"
               >
-                <Phone size={20} />
+                <Phone size={18} />
                 {contactInfo.phone}
               </a>
             </div>
 
             {/* Trust Indicators */}
-            <div className="flex flex-wrap items-center gap-6 lg:gap-8 pt-8 border-t border-white/20">
+            <div className="flex flex-wrap items-center gap-4 sm:gap-6 lg:gap-8 pt-6 sm:pt-8 border-t border-white/20">
               <div className="flex items-center gap-2">
-                <Shield className="text-forest-400" size={22} />
-                <span className="text-cream-100 font-medium">5-Year Warranty</span>
+                <Shield className="text-forest-400 flex-shrink-0" size={18} />
+                <span className="text-cream-100 font-medium text-sm sm:text-base">5-Year Warranty</span>
               </div>
               <div className="flex items-center gap-2">
-                <Award className="text-copper-400" size={22} />
-                <span className="text-cream-100 font-medium">20+ Years Experience</span>
+                <Award className="text-copper-400 flex-shrink-0" size={18} />
+                <span className="text-cream-100 font-medium text-sm sm:text-base">20+ Years</span>
               </div>
               <div className="flex items-center gap-2">
-                <BadgeCheck className="text-forest-400" size={22} />
-                <span className="text-cream-100 font-medium">Certified Craftsmen</span>
+                <BadgeCheck className="text-forest-400 flex-shrink-0" size={18} />
+                <span className="text-cream-100 font-medium text-sm sm:text-base">Certified</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden lg:flex flex-col items-center text-cream-300 animate-bounce-slow">
-          <span className="text-xs uppercase tracking-widest mb-2">Scroll</span>
-          <ChevronDown size={24} />
-        </div>
       </section>
 
       {/* ============================================
           TRUST BAR
           ============================================ */}
-      <section className="bg-forest-700 py-6 md:py-8">
+      <section className="bg-forest-700 py-4 sm:py-6 md:py-8">
         <div className="container-custom">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-8">
             {trustItems.map((item, index) => (
               <div
                 key={index}
-                className="flex items-center gap-3 justify-center lg:justify-start"
+                className={`flex items-center gap-2 sm:gap-3 justify-center lg:justify-start ${index === 4 ? 'col-span-2 sm:col-span-1' : ''}`}
               >
-                <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
-                  <item.icon size={20} className="text-copper-400" />
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <item.icon size={18} className="text-copper-400 sm:w-5 sm:h-5" />
                 </div>
-                <div>
-                  <span className="text-white font-semibold text-sm block leading-tight">
+                <div className="min-w-0">
+                  <span className="text-white font-semibold text-xs sm:text-sm block leading-tight truncate">
                     {item.label}
                   </span>
-                  <span className="text-forest-200 text-xs">
+                  <span className="text-forest-200 text-[10px] sm:text-xs hidden sm:block">
                     {item.sublabel}
                   </span>
                 </div>
@@ -322,11 +295,11 @@ export default function HomePage() {
               </div>
 
               {/* Floating Stats Card */}
-              <div className="absolute -bottom-6 -left-6 lg:-bottom-8 lg:-left-8 bg-forest-700 p-6 lg:p-8 rounded-2xl shadow-xl">
-                <div className="text-4xl lg:text-5xl font-bold text-white mb-1" style={{ fontFamily: 'var(--font-display)' }}>
+              <div className="absolute -bottom-4 -left-2 sm:-bottom-6 sm:-left-6 lg:-bottom-8 lg:-left-8 bg-copper-500 p-4 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl shadow-xl">
+                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-1" style={{ fontFamily: 'var(--font-display)' }}>
                   20+
                 </div>
-                <div className="text-forest-200 text-sm uppercase tracking-wider">
+                <div className="text-white/90 text-xs sm:text-sm uppercase tracking-wider font-medium">
                   Years Experience
                 </div>
               </div>
@@ -368,12 +341,14 @@ export default function HomePage() {
                 className="group card-service"
               >
                 {/* Image */}
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
                     src={service.image}
                     alt={service.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover img-zoom"
+                    unoptimized
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/60 to-transparent" />
 
@@ -416,45 +391,48 @@ export default function HomePage() {
       {/* ============================================
           PROCESS SECTION
           ============================================ */}
-      <section className="section bg-charcoal-900">
+      <section className="section bg-cream-100">
         <div className="container-custom">
           {/* Header */}
           <div className="text-center mb-16">
-            <span className="text-label text-copper-400 mb-4 block">How We Work</span>
+            <span className="text-label text-forest-600 mb-4 block">How We Work</span>
+            <div className="section-line-center" />
             <h2
-              className="text-white mb-4"
+              className="text-charcoal-900 mb-4"
               style={{ fontFamily: 'var(--font-display)' }}
             >
               Our Simple Process
             </h2>
-            <p className="text-charcoal-400 text-lg max-w-2xl mx-auto">
+            <p className="text-charcoal-600 text-lg max-w-2xl mx-auto">
               From consultation to completion, we ensure every step exceeds your expectations.
             </p>
           </div>
 
           {/* Process Steps */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {processSteps.map((step, index) => (
-              <div key={index} className="relative group">
-                <div className="card-glass text-center">
+              <div key={index} className="relative">
+                <div className="bg-white rounded-2xl p-6 text-center shadow-md border border-cream-200">
                   {/* Number */}
-                  <div className="text-6xl font-bold text-forest-500/30 mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-                    {step.number}
+                  <div className="w-14 h-14 bg-forest-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl font-bold text-white" style={{ fontFamily: 'var(--font-display)' }}>
+                      {step.number}
+                    </span>
                   </div>
                   <h3
-                    className="text-xl text-white mb-3"
+                    className="text-lg text-charcoal-900 mb-2"
                     style={{ fontFamily: 'var(--font-display)' }}
                   >
                     {step.title}
                   </h3>
-                  <p className="text-charcoal-400 text-sm">
+                  <p className="text-charcoal-600 text-sm">
                     {step.description}
                   </p>
                 </div>
 
                 {/* Connector Line */}
                 {index < processSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-forest-600/50" />
+                  <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-forest-300" />
                 )}
               </div>
             ))}
@@ -463,62 +441,37 @@ export default function HomePage() {
       </section>
 
       {/* ============================================
-          TESTIMONIALS SECTION
+          REVIEWS CTA SECTION
           ============================================ */}
-      <section className="section bg-cream-50">
+      <section className="section-sm bg-cream-50">
         <div className="container-custom">
-          {/* Header */}
-          <div className="text-center mb-16">
-            <span className="text-label text-forest-600 mb-4 block">Testimonials</span>
-            <div className="section-line-center" />
-            <h2
-              className="text-charcoal-900 mb-4"
-              style={{ fontFamily: 'var(--font-display)' }}
-            >
-              What Our Clients Say
-            </h2>
-            <div className="flex items-center justify-center gap-2 mt-4">
+          <div className="text-center">
+            <div className="flex items-center justify-center gap-2 mb-4">
               <div className="flex">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <Star key={star} className="text-copper-500 fill-copper-500" size={24} />
                 ))}
               </div>
-              <span className="text-charcoal-700 font-semibold ml-2">5.0 on Google</span>
+              <span className="text-charcoal-700 font-semibold ml-2">5-Star Rated on Google</span>
             </div>
-          </div>
-
-          {/* Testimonials Grid */}
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="card-testimonial">
-                {/* Quote Icon */}
-                <div className="w-12 h-12 bg-forest-100 rounded-xl flex items-center justify-center mb-6">
-                  <Quote className="text-forest-600" size={24} />
-                </div>
-
-                {/* Rating */}
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="text-copper-500 fill-copper-500" size={18} />
-                  ))}
-                </div>
-
-                {/* Content */}
-                <p className="text-charcoal-700 mb-6 leading-relaxed">
-                  "{testimonial.content}"
-                </p>
-
-                {/* Author */}
-                <div className="pt-4 border-t border-cream-300">
-                  <div className="font-semibold text-charcoal-900" style={{ fontFamily: 'var(--font-display)' }}>
-                    {testimonial.name}
-                  </div>
-                  <div className="text-sm text-charcoal-500">
-                    {testimonial.role} • {testimonial.location}
-                  </div>
-                </div>
-              </div>
-            ))}
+            <h2
+              className="text-2xl md:text-3xl text-charcoal-900 mb-4"
+              style={{ fontFamily: 'var(--font-display)' }}
+            >
+              See What Our Customers Say
+            </h2>
+            <p className="text-charcoal-600 mb-6 max-w-xl mx-auto">
+              Read real reviews from satisfied customers across Greater Vancouver.
+            </p>
+            <a
+              href="https://www.google.com/search?q=promark+flooring+vancouver+reviews"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-outline"
+            >
+              View Google Reviews
+              <ArrowRight size={18} />
+            </a>
           </div>
         </div>
       </section>
@@ -592,7 +545,7 @@ export default function HomePage() {
           </div>
 
           {/* Service Areas Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 mb-8">
             {serviceAreas.map((city) => (
               <Link
                 key={city}
@@ -611,70 +564,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ============================================
-          FINAL CTA
-          ============================================ */}
-      <section className="section bg-forest-800 relative overflow-hidden">
-        {/* Background Pattern */}
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `repeating-linear-gradient(
-              45deg,
-              transparent,
-              transparent 20px,
-              rgba(255,255,255,0.1) 20px,
-              rgba(255,255,255,0.1) 40px
-            )`
-          }}
-        />
-
-        <div className="container-custom relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2
-              className="text-3xl md:text-4xl lg:text-5xl text-white mb-6"
-              style={{ fontFamily: 'var(--font-display)' }}
-            >
-              Ready to Transform Your Floors?
-            </h2>
-            <p className="text-forest-100 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
-              Get a free consultation and quote from Vancouver's most trusted flooring craftsmen.
-              Experience the difference that 20+ years of excellence makes.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Link href="/quote" className="btn-white btn-xl">
-                Request Free Quote
-                <ArrowRight size={18} />
-              </Link>
-              <a href={contactInfo.phoneHref} className="btn-ghost btn-xl">
-                <Phone size={18} />
-                Call {contactInfo.phone}
-              </a>
-            </div>
-
-            {/* Trust Badges */}
-            <div className="flex flex-wrap justify-center gap-8 text-forest-100">
-              <div className="flex items-center gap-2">
-                <CheckCircle size={20} className="text-copper-400" />
-                <span>20+ Years Experience</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle size={20} className="text-copper-400" />
-                <span>5-Year Warranty</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle size={20} className="text-copper-400" />
-                <span>Free Consultation</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle size={20} className="text-copper-400" />
-                <span>Family-Owned & Local</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   )
 }

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import { Playfair_Display, Source_Sans_3 } from 'next/font/google'
+import { Inter, Source_Sans_3 } from 'next/font/google'
 import './globals.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -7,7 +7,7 @@ import Chatbot from './components/Chatbot'
 import { BaseSchema } from './components/SchemaMarkup'
 import { Analytics } from '@vercel/analytics/react'
 
-const playfair = Playfair_Display({
+const inter = Inter({
   subsets: ['latin'],
   variable: '--font-display',
   display: 'swap',
@@ -23,7 +23,7 @@ const sourceSans = Source_Sans_3({
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#4A7C59', // Forest green
+  themeColor: '#2D3A48', // Industrial steel
 }
 
 export const metadata: Metadata = {
@@ -104,7 +104,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${sourceSans.variable}`}>
+    <html lang="en" className={`${inter.variable} ${sourceSans.variable}`}>
       <head>
         <BaseSchema />
         <link rel="icon" href="/favicon.ico" sizes="any" />

@@ -31,9 +31,12 @@ const services = [
   { name: 'Repair & Maintenance', href: '/services/repair-maintenance' },
 ]
 
+// All Greater Vancouver & Fraser Valley
 const serviceAreas = [
-  'Vancouver', 'North Vancouver', 'West Vancouver', 'Burnaby', 'Surrey',
-  'Delta', 'Langley', 'Port Coquitlam', 'Maple Ridge', 'Mission'
+  'Vancouver', 'North Vancouver', 'West Vancouver', 'Burnaby', 'Richmond',
+  'Surrey', 'Delta', 'White Rock', 'New Westminster', 'Coquitlam',
+  'Port Coquitlam', 'Port Moody', 'Langley', 'Maple Ridge', 'Pitt Meadows',
+  'Mission', 'Abbotsford', 'Chilliwack'
 ]
 
 const quickLinks = [
@@ -79,17 +82,17 @@ export default function Footer() {
               Experience the difference that 20+ years of excellence makes.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8 sm:mb-10">
               <Link
                 href="/quote"
-                className="btn-white btn-lg"
+                className="btn-white btn-lg w-full sm:w-auto justify-center"
               >
                 Request Free Quote
                 <ArrowRight size={18} />
               </Link>
               <a
                 href={contactInfo.phoneHref}
-                className="btn-ghost btn-lg"
+                className="btn-ghost btn-lg w-full sm:w-auto justify-center"
               >
                 <Phone size={18} />
                 Call {contactInfo.phone}
@@ -97,22 +100,22 @@ export default function Footer() {
             </div>
 
             {/* Trust Badges */}
-            <div className="flex flex-wrap justify-center gap-6 md:gap-10 text-forest-100">
-              <div className="flex items-center gap-2">
-                <Shield size={20} className="text-copper-400" />
-                <span className="text-sm md:text-base">5-Year Warranty</span>
+            <div className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-4 sm:gap-6 md:gap-10 text-forest-100">
+              <div className="flex items-center gap-2 justify-center sm:justify-start">
+                <Shield size={18} className="text-copper-400 flex-shrink-0 sm:w-5 sm:h-5" />
+                <span className="text-xs sm:text-sm md:text-base">5-Year Warranty</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Award size={20} className="text-copper-400" />
-                <span className="text-sm md:text-base">20+ Years Experience</span>
+              <div className="flex items-center gap-2 justify-center sm:justify-start">
+                <Award size={18} className="text-copper-400 flex-shrink-0 sm:w-5 sm:h-5" />
+                <span className="text-xs sm:text-sm md:text-base">20+ Years</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Users size={20} className="text-copper-400" />
-                <span className="text-sm md:text-base">Family-Owned & Local</span>
+              <div className="flex items-center gap-2 justify-center sm:justify-start">
+                <Users size={18} className="text-copper-400 flex-shrink-0 sm:w-5 sm:h-5" />
+                <span className="text-xs sm:text-sm md:text-base">Family-Owned</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Star size={20} className="text-copper-400" />
-                <span className="text-sm md:text-base">5-Star Rated</span>
+              <div className="flex items-center gap-2 justify-center sm:justify-start">
+                <Star size={18} className="text-copper-400 flex-shrink-0 sm:w-5 sm:h-5" />
+                <span className="text-xs sm:text-sm md:text-base">5-Star Rated</span>
               </div>
             </div>
           </div>
@@ -307,25 +310,25 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-charcoal-800">
-        <div className="container-custom py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-charcoal-500 text-sm">
+        <div className="container-custom py-4 sm:py-6">
+          <div className="flex flex-col gap-4 items-center text-center md:flex-row md:justify-between md:text-left">
+            <div className="text-charcoal-500 text-xs sm:text-sm">
               &copy; {currentYear} PROMARK FLOORING. All rights reserved.
             </div>
 
-            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-charcoal-500">
+            <div className="flex flex-wrap justify-center gap-x-4 sm:gap-x-6 gap-y-2 text-xs sm:text-sm text-charcoal-500">
               <span className="flex items-center gap-1.5">
-                <Users size={14} className="text-forest-500" />
-                Family-Owned & Local
+                <Users size={14} className="text-forest-500 flex-shrink-0" />
+                <span className="hidden sm:inline">Family-Owned & </span>Local
               </span>
-              <span>•</span>
+              <span className="hidden sm:inline">•</span>
               <span className="flex items-center gap-1.5">
-                <Award size={14} className="text-copper-500" />
-                20+ Years Experience
+                <Award size={14} className="text-copper-500 flex-shrink-0" />
+                20+ Years
               </span>
-              <span>•</span>
+              <span className="hidden sm:inline">•</span>
               <span className="flex items-center gap-1.5">
-                <Shield size={14} className="text-forest-500" />
+                <Shield size={14} className="text-forest-500 flex-shrink-0" />
                 5-Year Warranty
               </span>
             </div>

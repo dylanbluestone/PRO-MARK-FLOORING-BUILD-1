@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { Clock, ArrowRight } from 'lucide-react'
 
 export const metadata = {
@@ -36,38 +35,49 @@ const posts = [
 export default function ResourcesPage() {
   return (
     <main>
-      <section className="bg-gradient-to-br from-gray-900 to-gray-800 py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">Flooring Resources</h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Expert tips and guides for your flooring projects.
-          </p>
+      {/* Compact Hero */}
+      <section className="bg-forest-700 py-8">
+        <div className="container-custom">
+          <div className="text-center">
+            <h1
+              className="text-2xl md:text-3xl text-white font-bold"
+              style={{ fontFamily: 'var(--font-display)' }}
+            >
+              Flooring Resources
+            </h1>
+            <p className="text-forest-200 mt-1">
+              Expert tips and guides for your flooring projects
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <section className="py-16 md:py-20 bg-cream-50">
+        <div className="container-custom">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {posts.map((post) => (
-              <article key={post.slug} className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-red-200 hover:shadow-xl transition-all group">
-                <div className="h-48 bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center">
+              <article key={post.slug} className="bg-white rounded-2xl overflow-hidden border border-cream-200 hover:border-forest-300 hover:shadow-xl transition-all group">
+                <div className="h-48 bg-gradient-to-br from-forest-600 to-forest-700 flex items-center justify-center">
                   <span className="text-white text-6xl font-bold opacity-20">{post.category.charAt(0)}</span>
                 </div>
                 <div className="p-6">
-                  <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
-                    <span className="bg-red-100 text-red-600 px-2 py-1 rounded text-xs font-semibold">{post.category}</span>
+                  <div className="flex items-center gap-4 text-sm text-charcoal-500 mb-3">
+                    <span className="bg-forest-100 text-forest-700 px-2 py-1 rounded text-xs font-semibold">{post.category}</span>
                     <span className="flex items-center gap-1">
                       <Clock size={14} />
                       {post.readTime}
                     </span>
                   </div>
-                  <h2 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-red-600 transition-colors">
+                  <h2
+                    className="text-xl font-bold text-charcoal-900 mb-3 group-hover:text-forest-700 transition-colors"
+                    style={{ fontFamily: 'var(--font-display)' }}
+                  >
                     {post.title}
                   </h2>
-                  <p className="text-gray-600 mb-4">{post.excerpt}</p>
-                  <span className="inline-flex items-center gap-1 text-red-600 font-semibold">
+                  <p className="text-charcoal-600 mb-4">{post.excerpt}</p>
+                  <span className="inline-flex items-center gap-1 text-forest-600 font-semibold">
                     Read More
-                    <ArrowRight size={16} />
+                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                   </span>
                 </div>
               </article>
@@ -75,7 +85,7 @@ export default function ResourcesPage() {
           </div>
 
           <div className="text-center mt-16">
-            <p className="text-gray-500">More articles coming soon!</p>
+            <p className="text-charcoal-500">More articles coming soon!</p>
           </div>
         </div>
       </section>

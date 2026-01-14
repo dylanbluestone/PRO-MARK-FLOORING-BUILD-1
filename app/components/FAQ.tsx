@@ -45,22 +45,22 @@ export default function FAQ() {
       {faqs.map((faq, index) => (
         <div
           key={index}
-          className={`border rounded-xl overflow-hidden transition-all duration-300 ${openIndex === index ? 'border-red-200 bg-red-50/50 shadow-lg' : 'border-gray-200 bg-white hover:border-red-200 hover:shadow-md'}`}
+          className={`border rounded-xl overflow-hidden transition-all duration-300 ${openIndex === index ? 'border-forest-200 bg-forest-50/50 shadow-lg' : 'border-cream-200 bg-white hover:border-forest-200 hover:shadow-md'}`}
         >
           <button
             onClick={() => setOpenIndex(openIndex === index ? null : index)}
             className="w-full flex items-center justify-between p-6 text-left"
           >
-            <span className={`font-semibold text-lg pr-4 ${openIndex === index ? 'text-red-600' : 'text-gray-900'}`}>
+            <span className={`font-semibold text-lg pr-4 ${openIndex === index ? 'text-forest-700' : 'text-charcoal-900'}`}>
               {faq.question}
             </span>
-            <div className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-all ${openIndex === index ? 'bg-red-600 text-white' : 'bg-gray-100 text-gray-600'}`}>
+            <div className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-all ${openIndex === index ? 'bg-forest-600 text-white' : 'bg-cream-100 text-charcoal-600'}`}>
               {openIndex === index ? <Minus size={20} /> : <Plus size={20} />}
             </div>
           </button>
 
           <div className={`overflow-hidden transition-all duration-300 ${openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-            <div className="px-6 pb-6 text-gray-600 leading-relaxed">
+            <div className="px-6 pb-6 text-charcoal-600 leading-relaxed">
               {faq.answer}
             </div>
           </div>

@@ -1,7 +1,6 @@
 import ContactForm from '@/app/components/ContactForm'
-import { Phone, Mail, MapPin, Clock, MessageCircle, ArrowRight, Shield, Award, Users, Star } from 'lucide-react'
+import { Phone, Mail, MapPin, Clock, ArrowRight, Shield, Award, Users, Star } from 'lucide-react'
 import Link from 'next/link'
-import Image from 'next/image'
 
 export const metadata = {
   title: 'Contact Us | PROMARK FLOORING - Vancouver Floor Specialists',
@@ -20,60 +19,49 @@ const contactInfo = {
 export default function ContactPage() {
   return (
     <main>
-      {/* Hero Section */}
-      <section className="relative bg-charcoal-900 py-20 md:py-28 overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <Image
-            src="/images/hero-leveling.jpg"
-            alt="Floor leveling in progress"
-            fill
-            className="object-cover opacity-30"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-charcoal-900 via-charcoal-900/95 to-charcoal-900/80" />
-        </div>
-
-        {/* Content */}
-        <div className="container-custom relative z-10">
-          <div className="max-w-3xl">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-forest-600/20 border border-forest-500/30 rounded-full px-4 py-2 mb-6">
-              <MessageCircle size={16} className="text-forest-400" />
-              <span className="text-forest-300 text-sm font-medium">We're Here to Help</span>
-            </div>
-
-            <h1
-              className="text-4xl md:text-5xl lg:text-6xl text-cream-50 mb-6"
-              style={{ fontFamily: 'var(--font-display)' }}
-            >
-              Let's Talk About
-              <span className="text-copper-400 block mt-2">Your Floors</span>
-            </h1>
-
-            <p className="text-lg md:text-xl text-charcoal-300 max-w-2xl">
-              Ready to transform your space? Reach out for a free consultation with Mark Biernacki,
-              Vancouver's trusted flooring expert with over 20 years of experience.
-            </p>
-          </div>
+      {/* Compact Header */}
+      <section className="bg-forest-700 py-8">
+        <div className="container-custom">
+          <h1
+            className="text-2xl md:text-3xl text-white font-bold"
+            style={{ fontFamily: 'var(--font-display)' }}
+          >
+            Contact Us
+          </h1>
+          <p className="text-forest-200 mt-2">
+            Get in touch with Vancouver's trusted flooring experts
+          </p>
         </div>
       </section>
 
       {/* Contact Methods Section */}
-      <section className="py-16 md:py-20 bg-gradient-to-b from-cream-50 to-white">
+      <section className="py-12 md:py-16 bg-cream-50">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
-            {/* Contact Info */}
-            <div>
+            {/* Contact Form - First */}
+            <div className="order-1">
+              <div className="bg-white rounded-2xl shadow-lg border border-cream-200 p-6 lg:p-8">
+                <h2
+                  className="text-xl md:text-2xl text-charcoal-900 mb-2 font-bold"
+                  style={{ fontFamily: 'var(--font-display)' }}
+                >
+                  Send Us a Message
+                </h2>
+                <p className="text-charcoal-600 mb-6 text-sm">
+                  We'll get back to you within 24 hours.
+                </p>
+                <ContactForm />
+              </div>
+            </div>
+
+            {/* Contact Info - Second */}
+            <div className="order-2">
               <h2
-                className="text-3xl text-charcoal-900 mb-4"
+                className="text-xl md:text-2xl text-charcoal-900 mb-4 font-bold"
                 style={{ fontFamily: 'var(--font-display)' }}
               >
-                Get In Touch
+                Other Ways to Reach Us
               </h2>
-              <p className="text-charcoal-600 mb-8">
-                Choose your preferred way to reach us. We respond to all inquiries within 24 hours.
-              </p>
 
               {/* Contact Cards */}
               <div className="space-y-4 mb-10">
@@ -148,28 +136,14 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Contact Form */}
-            <div>
-              <div className="bg-white rounded-3xl shadow-xl border border-cream-200 p-8 lg:p-10">
-                <h2
-                  className="text-2xl text-charcoal-900 mb-2"
-                  style={{ fontFamily: 'var(--font-display)' }}
-                >
-                  Send Us a Message
-                </h2>
-                <p className="text-charcoal-600 mb-8">
-                  Have a question or want to discuss your project? We'll get back to you within 24 hours.
-                </p>
-                <ContactForm />
-              </div>
-
-              {/* Quick Quote CTA */}
-              <div className="mt-6 bg-forest-700 rounded-2xl p-6 text-white">
+            {/* Quick Quote CTA */}
+            <div className="order-3 lg:col-span-2">
+              <div className="bg-forest-700 rounded-2xl p-6 text-white text-center">
                 <h3
-                  className="text-lg mb-2"
+                  className="text-lg mb-2 font-bold"
                   style={{ fontFamily: 'var(--font-display)' }}
                 >
-                  Ready for a Detailed Quote?
+                  Need a Detailed Quote for Your Project?
                 </h3>
                 <p className="text-forest-200 text-sm mb-4">
                   Our comprehensive quote form helps us provide you with an accurate estimate.

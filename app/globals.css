@@ -3,8 +3,8 @@
    Version 2.0 - Luxury Earthy Aesthetic
    ============================================ */
 
-/* Google Fonts - Premium Typography */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+/* Google Fonts - Professional Typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
 
 @import "tailwindcss";
 
@@ -25,31 +25,31 @@
   --color-walnut-900: #2E2619;
   --color-walnut-950: #1A1610;
 
-  /* Secondary - Deep Forest Green */
-  --color-forest-50: #F4F7F4;
-  --color-forest-100: #E6EDE6;
-  --color-forest-200: #CDDACD;
-  --color-forest-300: #A8C0A8;
-  --color-forest-400: #7A9E7A;
-  --color-forest-500: #4A7C59;
-  --color-forest-600: #3A6347;
-  --color-forest-700: #2F4F3A;
-  --color-forest-800: #273F2F;
-  --color-forest-900: #1E3425;
-  --color-forest-950: #0F1A12;
+  /* Secondary - Industrial Steel Blue */
+  --color-forest-50: #F5F7F9;
+  --color-forest-100: #E8ECF0;
+  --color-forest-200: #D1D9E0;
+  --color-forest-300: #A8B5C4;
+  --color-forest-400: #7A8DA3;
+  --color-forest-500: #4A5D73;
+  --color-forest-600: #3A4A5C;
+  --color-forest-700: #2D3A48;
+  --color-forest-800: #242E3A;
+  --color-forest-900: #1A222C;
+  --color-forest-950: #0F1318;
 
-  /* Accent - Warm Copper/Gold */
-  --color-copper-50: #FDF8F3;
-  --color-copper-100: #FAF0E4;
-  --color-copper-200: #F5DFC6;
-  --color-copper-300: #EEC89D;
-  --color-copper-400: #E4A96A;
-  --color-copper-500: #D4874A;
-  --color-copper-600: #C6703D;
-  --color-copper-700: #A55834;
-  --color-copper-800: #854830;
-  --color-copper-900: #6C3C2A;
-  --color-copper-950: #3A1E14;
+  /* Accent - Safety Orange (Trade Standard) */
+  --color-copper-50: #FFF7F0;
+  --color-copper-100: #FFEDD9;
+  --color-copper-200: #FFD9B3;
+  --color-copper-300: #FFBF80;
+  --color-copper-400: #FF9F4D;
+  --color-copper-500: #FF7F1A;
+  --color-copper-600: #E66A00;
+  --color-copper-700: #CC5500;
+  --color-copper-800: #A34400;
+  --color-copper-900: #803500;
+  --color-copper-950: #4D2000;
 
   /* Cream/Neutral Warm Tones */
   --color-cream-50: #FEFDFB;
@@ -78,7 +78,7 @@
   --color-charcoal-950: #1A1816;
 
   /* Fonts */
-  --font-display: 'Playfair Display', Georgia, serif;
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-body: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
@@ -92,13 +92,13 @@
   --primary-dark: #3D3324;
 
   /* Secondary Palette */
-  --secondary: #4A7C59;
-  --secondary-light: #7A9E7A;
-  --secondary-dark: #2F4F3A;
+  --secondary: #4A5D73;
+  --secondary-light: #7A8DA3;
+  --secondary-dark: #2D3A48;
 
   /* Accent */
-  --accent: #D4874A;
-  --accent-light: #E4A96A;
+  --accent: #FF7F1A;
+  --accent-light: #FF9F4D;
   --accent-dark: #A55834;
 
   /* Neutrals */
@@ -108,7 +108,7 @@
   --charcoal-light: #4A4540;
 
   /* Typography */
-  --font-display: 'Playfair Display', Georgia, serif;
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: 'Source Sans Pro', sans-serif;
 
   /* Spacing */
@@ -357,11 +357,11 @@
   }
 
   .btn-lg {
-    @apply px-8 py-4 text-base;
+    @apply px-5 py-3 text-sm sm:px-8 sm:py-4 sm:text-base;
   }
 
   .btn-xl {
-    @apply px-10 py-5 text-lg;
+    @apply px-6 py-4 text-base sm:px-10 sm:py-5 sm:text-lg;
   }
 }
 
@@ -394,8 +394,8 @@
   .card-service {
     @apply bg-white rounded-2xl overflow-hidden;
     @apply shadow-md border border-cream-200;
-    @apply transition-all duration-300;
-    @apply hover:shadow-2xl hover:-translate-y-2;
+    @apply transition-shadow duration-200;
+    @apply hover:shadow-xl;
   }
 
   /* Testimonial Card */
@@ -735,13 +735,9 @@
    HOVER & TRANSITION EFFECTS
    ============================================ */
 @layer utilities {
-  /* Image Zoom */
+  /* Image Zoom - DISABLED for performance */
   .img-zoom {
-    @apply transition-transform duration-500 ease-out;
-  }
-
-  .group:hover .img-zoom {
-    @apply scale-105;
+    /* Animation removed for better performance on older devices */
   }
 
   /* Link Underline Effect */
@@ -841,6 +837,36 @@ button:focus-visible {
 
   h3 {
     @apply text-xl;
+  }
+
+  /* Improve touch targets on mobile */
+  .form-input,
+  .form-select,
+  .form-textarea {
+    @apply py-4 text-base;
+    min-height: 48px;
+  }
+
+  /* Ensure buttons are full width on very small screens */
+  .btn-primary,
+  .btn-secondary,
+  .btn-accent,
+  .btn-outline,
+  .btn-ghost,
+  .btn-white {
+    @apply text-xs tracking-wide;
+  }
+}
+
+/* Extra small screens (< 480px) */
+@media (max-width: 480px) {
+  .container-custom {
+    @apply px-4;
+  }
+
+  /* Stack flex buttons on very small screens */
+  .flex-col-xs {
+    @apply flex-col;
   }
 }
 
