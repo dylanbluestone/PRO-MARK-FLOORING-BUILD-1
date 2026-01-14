@@ -136,24 +136,6 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Quick Quote CTA */}
-            <div className="order-3 lg:col-span-2">
-              <div className="bg-forest-700 rounded-2xl p-6 text-white text-center">
-                <h3
-                  className="text-lg mb-2 font-bold"
-                  style={{ fontFamily: 'var(--font-display)' }}
-                >
-                  Need a Detailed Quote for Your Project?
-                </h3>
-                <p className="text-forest-200 text-sm mb-4">
-                  Our comprehensive quote form helps us provide you with an accurate estimate.
-                </p>
-                <Link href="/quote" className="btn-white btn-sm">
-                  Request Free Quote
-                  <ArrowRight size={16} />
-                </Link>
-              </div>
-            </div>
           </div>
         </div>
       </section>
