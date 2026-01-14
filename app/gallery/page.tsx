@@ -70,6 +70,7 @@ function GallerySection({ title, subtitle, images, href, linkText, bgColor = 'wh
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                unoptimized
               />
               <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-0 left-0 right-0 p-5">
@@ -153,39 +154,6 @@ export default function GalleryPage() {
         icon={<Sparkles className="text-copper-600" size={28} />}
       />
 
-      {/* CTA Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-forest-700 to-forest-800" />
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255,255,255,0.1) 20px, rgba(255,255,255,0.1) 40px)`
-          }}
-        />
-
-        <div className="container-custom relative z-10 text-center">
-          <h2
-            className="text-3xl md:text-4xl text-white mb-4"
-            style={{ fontFamily: 'var(--font-display)' }}
-          >
-            Ready for Results Like These?
-          </h2>
-          <p className="text-xl text-forest-100 mb-8 max-w-2xl mx-auto">
-            Get a free quote and transform your floors with PROMARK FLOORING's
-            expert craftsmanship
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/quote" className="btn-white btn-lg">
-              Request Free Quote
-              <ArrowRight size={18} />
-            </Link>
-            <a href="tel:+16043536077" className="btn-ghost btn-lg">
-              <Phone size={18} />
-              Call (604) 353-6077
-            </a>
-          </div>
-        </div>
-      </section>
     </main>
   )
 }

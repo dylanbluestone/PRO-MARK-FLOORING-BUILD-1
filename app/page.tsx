@@ -105,12 +105,10 @@ const galleryImages = [
   '/assets/PROMARK-FLOORING-vinyl-flooring-vancouver-11.jpg',
 ]
 
-// Service areas - All Greater Vancouver & Fraser Valley
+// Service areas - Only cities with dedicated pages
 const serviceAreas = [
-  'Vancouver', 'North Vancouver', 'West Vancouver', 'Burnaby', 'Richmond',
-  'Surrey', 'Delta', 'White Rock', 'New Westminster', 'Coquitlam',
-  'Port Coquitlam', 'Port Moody', 'Langley', 'Maple Ridge', 'Pitt Meadows',
-  'Mission', 'Abbotsford', 'Chilliwack'
+  'Vancouver', 'North Vancouver', 'West Vancouver', 'Burnaby',
+  'Surrey', 'Delta', 'Langley', 'Port Coquitlam', 'Maple Ridge', 'Mission'
 ]
 
 export default function HomePage() {

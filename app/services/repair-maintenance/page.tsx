@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
-import { CheckCircle, Phone, ChevronDown, ArrowRight, Wrench } from 'lucide-react'
+import { CheckCircle, Phone, ChevronDown, Wrench } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Floor Repair & Maintenance Vancouver | Professional Service | PROMARK',
@@ -184,38 +184,6 @@ export default function RepairMaintenancePage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-copper-600 to-copper-700" />
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255,255,255,0.1) 20px, rgba(255,255,255,0.1) 40px)`
-          }}
-        />
-
-        <div className="container-custom relative z-10 text-center">
-          <h2
-            className="text-3xl md:text-4xl text-white mb-4"
-            style={{ fontFamily: 'var(--font-display)' }}
-          >
-            Need Floor Repair or Maintenance?
-          </h2>
-          <p className="text-xl text-copper-100 mb-8 max-w-2xl mx-auto">
-            Get a free assessment and quote to restore your floors
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/quote" className="btn-white btn-lg">
-              Request Free Quote
-              <ArrowRight size={18} />
-            </Link>
-            <a href="tel:+16043536077" className="btn-ghost btn-lg">
-              <Phone size={18} />
-              Call (604) 353-6077
-            </a>
-          </div>
-        </div>
-      </section>
     </main>
   )
 }

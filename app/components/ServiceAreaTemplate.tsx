@@ -58,11 +58,12 @@ export default function ServiceAreaTemplate({
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/hero-hardwood.jpg"
+            src="/assets/hardwood-flooring-vancouver-Promark-Flooring.jpg"
             alt={`Premium flooring services in ${cityName}`}
             fill
             className="object-cover"
             priority
+            unoptimized
           />
           <div className="absolute inset-0 bg-gradient-to-r from-charcoal-900 via-charcoal-900/90 to-charcoal-900/70" />
           <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/50 to-transparent" />
