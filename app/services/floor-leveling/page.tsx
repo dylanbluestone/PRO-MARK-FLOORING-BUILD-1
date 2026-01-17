@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Metadata } from 'next'
 import { Shield, CheckCircle, ArrowRight, Phone, Clock, ChevronDown, Award } from 'lucide-react'
 import { ServiceSchema } from '@/lib/schema-markup'
@@ -144,6 +145,34 @@ export default function FloorLevelingPage() {
                   slopes. Our work creates the solid, level foundation your new flooring needs to look
                   beautiful and last for decades.
                 </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Image Gallery */}
+        <section className="py-12 md:py-16 bg-white">
+          <div className="container-custom">
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+                <Image
+                  src="/assets/PROMARK-FLOORING-floor-leveling-Vancouver-13.jpg"
+                  alt="Professional floor leveling services"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  unoptimized
+                />
+              </div>
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+                <Image
+                  src="/assets/PROMARK-FLOORING-floor-leveling-Vancouver-14.jpg"
+                  alt="Expert floor leveling craftsmanship"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  unoptimized
+                />
               </div>
             </div>
           </div>

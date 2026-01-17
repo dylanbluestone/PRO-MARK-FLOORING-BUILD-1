@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Metadata } from 'next'
 import { Shield, CheckCircle, ArrowRight, Phone, ChevronDown } from 'lucide-react'
 import { ServiceSchema } from '@/lib/schema-markup'
@@ -110,6 +111,34 @@ export default function HardwoodInstallationPage() {
                   finishing, and meticulous quality control. We work with all hardwood species
                   and installation methods to create the exact look you envision.
                 </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Image Gallery */}
+        <section className="py-12 md:py-16 bg-white">
+          <div className="container-custom">
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+                <Image
+                  src="/assets/PROMARK-FLOORING-hardwood-flooring-installation-Vancouver-11.jpg"
+                  alt="Professional hardwood flooring installation"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  unoptimized
+                />
+              </div>
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+                <Image
+                  src="/assets/PROMARK-FLOORING-hardwood-flooring-installation-Vancouver-10.jpg"
+                  alt="Expert hardwood installation craftsmanship"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  unoptimized
+                />
               </div>
             </div>
           </div>

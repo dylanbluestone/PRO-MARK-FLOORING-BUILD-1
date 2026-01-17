@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Metadata } from 'next'
 import { CheckCircle, Phone, ChevronDown } from 'lucide-react'
 
@@ -86,6 +87,34 @@ export default function StairsPage() {
                 our craftsmen deliver exceptional results that combine structural integrity with
                 aesthetic excellence.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Image Gallery */}
+      <section className="py-12 md:py-16 bg-white">
+        <div className="container-custom">
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+              <Image
+                src="/assets/PROMARK-FLOORING-stairs-11.jpg"
+                alt="Professional staircase installation"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                unoptimized
+              />
+            </div>
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+              <Image
+                src="/assets/PROMARK-FLOORING-stairs-14.jpg"
+                alt="Expert staircase craftsmanship"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                unoptimized
+              />
             </div>
           </div>
         </div>

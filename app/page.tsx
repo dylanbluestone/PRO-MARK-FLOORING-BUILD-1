@@ -13,7 +13,6 @@ import {
   Grid3X3,
   TrendingUp,
   Wrench,
-  Clock,
   BadgeCheck,
   Sparkles
 } from 'lucide-react'
@@ -31,7 +30,6 @@ const trustItems = [
   { icon: Award, label: '20+ Years', sublabel: 'Experience' },
   { icon: Users, label: 'Family-Owned', sublabel: 'Local & Trusted' },
   { icon: Star, label: '5-Star Rated', sublabel: 'Google Reviews' },
-  { icon: Clock, label: 'Mon-Fri', sublabel: '8AM - 8PM' },
 ]
 
 // Services
@@ -208,11 +206,11 @@ export default function HomePage() {
           ============================================ */}
       <section className="bg-forest-700 py-4 sm:py-6 md:py-8">
         <div className="container-custom">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {trustItems.map((item, index) => (
               <div
                 key={index}
-                className={`flex items-center gap-2 sm:gap-3 justify-center lg:justify-start ${index === 4 ? 'col-span-2 sm:col-span-1' : ''}`}
+                className="flex items-center gap-2 sm:gap-3 justify-center"
               >
                 <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0">
                   <item.icon size={18} className="text-copper-400 sm:w-5 sm:h-5" />
@@ -551,10 +549,10 @@ export default function HomePage() {
               <Link
                 key={city}
                 href={`/service-areas/${city.toLowerCase().replace(' ', '-')}`}
-                className="flex items-center gap-2 bg-white p-4 rounded-xl border border-cream-200 hover:border-forest-300 hover:shadow-lg transition-all group"
+                className="flex items-center gap-2 bg-white p-3 sm:p-4 rounded-xl border border-cream-200 hover:border-forest-300 hover:shadow-lg transition-all group"
               >
-                <MapPin size={18} className="text-copper-500 group-hover:text-forest-600 transition-colors" />
-                <span className="text-charcoal-700 font-medium">{city}</span>
+                <MapPin size={16} className="text-copper-500 group-hover:text-forest-600 transition-colors flex-shrink-0" />
+                <span className="text-charcoal-700 font-medium text-sm sm:text-base">{city}</span>
               </Link>
             ))}
           </div>

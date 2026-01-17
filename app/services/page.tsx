@@ -15,6 +15,7 @@ const services = [
     href: '/services/floor-leveling',
     warranty: '5-Year Warranty',
     image: '/assets/PROMARK-FLOORING-floor-leveling-Vancouver-13.jpg',
+    galleryImage: '/assets/PROMARK-FLOORING-floor-leveling-Vancouver-17.jpg',
     features: ['Self-leveling compounds', 'Concrete grinding', 'Moisture testing', 'Subfloor correction'],
     highlight: true
   },
@@ -25,6 +26,7 @@ const services = [
     href: '/services/hardwood-installation',
     warranty: '1-Year Warranty',
     image: '/assets/PROMARK-FLOORING-hardwood-flooring-installation-Vancouver-10.jpg',
+    galleryImage: '/assets/PROMARK-FLOORING-hardwood-flooring-installation-Vancouver-11.jpg',
     features: ['Solid hardwood', 'Engineered wood', 'Laminate options', 'Custom finishes'],
     highlight: false
   },
@@ -35,6 +37,7 @@ const services = [
     href: '/services/stairs',
     warranty: 'Quality Guaranteed',
     image: '/assets/PROMARK-FLOORING-stairs-11.jpg',
+    galleryImage: '/assets/PROMARK-FLOORING-stairs-14.jpg',
     features: ['Custom treads', 'Nosing installation', 'Refinishing', 'Safety upgrades'],
     highlight: false
   },
@@ -45,6 +48,7 @@ const services = [
     href: '/services/repair-maintenance',
     warranty: 'Satisfaction Guaranteed',
     image: '/assets/PROMARK-FLOORING-hardwood-flooring-13.jpg',
+    galleryImage: '/assets/hardwood-flooring-vancouver-Promark-Flooring-2.jpg',
     features: ['Scratch repair', 'Water damage', 'Refinishing', 'Deep cleaning'],
     highlight: false
   }
@@ -140,7 +144,7 @@ export default function ServicesPage() {
                 }`}
               >
                 {/* Image */}
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative aspect-[16/10] overflow-hidden">
                   <div className="absolute inset-0 bg-charcoal-900/60 group-hover:bg-charcoal-900/40 transition-colors z-10" />
                   <Image
                     src={service.image}
@@ -199,6 +203,49 @@ export default function ServicesPage() {
                   </div>
                 </div>
               </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Service Images Showcase */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="container-custom">
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+            {services.map((service) => (
+              <div key={service.title} className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div className="relative aspect-[4/3]">
+                  <Image
+                    src={service.galleryImage}
+                    alt={`${service.title} - PROMARK FLOORING`}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    unoptimized
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/80 via-charcoal-900/40 to-transparent" />
+
+                  {/* Service Label */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
+                        service.highlight ? 'bg-forest-600' : 'bg-copper-500'
+                      }`}>
+                        <service.icon className="text-white" size={20} />
+                      </div>
+                      <h3
+                        className="text-xl md:text-2xl text-white"
+                        style={{ fontFamily: 'var(--font-display)' }}
+                      >
+                        {service.title}
+                      </h3>
+                    </div>
+                    <p className="text-cream-200 text-sm">
+                      {service.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>

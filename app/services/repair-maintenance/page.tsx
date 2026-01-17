@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Metadata } from 'next'
 import { CheckCircle, Phone, ChevronDown, Wrench } from 'lucide-react'
 
@@ -90,6 +91,34 @@ export default function RepairMaintenancePage() {
                 condition—or even better. Our repair work often costs a fraction of replacement
                 while delivering exceptional results.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Image Gallery */}
+      <section className="py-12 md:py-16 bg-white">
+        <div className="container-custom">
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+              <Image
+                src="/assets/PROMARK-FLOORING-hardwood-flooring-13.jpg"
+                alt="Professional floor repair and maintenance"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                unoptimized
+              />
+            </div>
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+              <Image
+                src="/assets/hardwood-flooring-vancouver-Promark-Flooring-2.jpg"
+                alt="Expert floor restoration services"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                unoptimized
+              />
             </div>
           </div>
         </div>
